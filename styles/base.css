@@ -6,6 +6,13 @@
   padding: 0;
 }
 
+/* The [hidden] attribute's built-in UA rule (display:none) loses to any
+   inline `style="display:..."` on the same element (e.g. the player modal's
+   `display:flex`), which would otherwise render "hidden" elements anyway. */
+[hidden] {
+  display: none !important;
+}
+
 html,
 body {
   background: var(--white);
