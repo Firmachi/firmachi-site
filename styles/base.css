@@ -525,4 +525,8 @@ a:focus-visible {
   .icon-btn:hover {
     transform: none;
   }
+
+  [data-reel] {
+    transition: none;
+  }
 }

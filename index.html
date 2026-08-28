@@ -23,7 +23,27 @@
 <script type="module" src="./scripts/main.js"></script>
 
 <style>
+  /* Coverflow reel widths, driven by the data-distance/data-parked attributes
+     that scripts/carousel.js sets on each slide. */
+  [data-reel][data-distance='0'] { width: var(--reel-width-active); opacity: 1; }
+  [data-reel][data-distance='1'] { width: var(--reel-width-near); opacity: 0.85; }
+  [data-reel][data-distance='2'] { width: var(--reel-width-far); opacity: 0.85; }
+  [data-reel][data-parked='true'] { width: 0; opacity: 0; pointer-events: none; }
+
+  [data-dot][aria-current='true'] { width: 30px !important; background: var(--black) !important; }
+
   @media (max-width: 860px) {
+    :root {
+      --reel-height: 300px;
+      --reel-width-active: min(560px, 78vw);
+      --reel-width-near: 22vw;
+      --reel-width-far: 0px;
+    }
+
+    /* --reel-width-far is 0 here, so the outer pair collapses; keep it out of
+       the tab order too, or it reads as an invisible focus stop. */
+    [data-reel][data-distance='2'] { pointer-events: none; visibility: hidden; }
+
     .home-grid-4 { grid-template-columns: 1fr 1fr !important; }
     .home-grid-3 { grid-template-columns: 1fr !important; }
     .home-about-grid { grid-template-columns: 1fr !important; }
