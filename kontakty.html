@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакты — Firmachi</title>
+<meta name="description" content="Свяжитесь с Firmachi: телефон, email, Telegram и WhatsApp. Обсудим сроки, бюджет и подход к вашему видеопроекту.">
+<meta name="theme-color" content="#f6f4f0">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Контакты — Firmachi">
+<meta property="og:description" content="Отвечаем в течение рабочего дня: обсудим задачу, сроки и бюджет, предложим формат созвона или встречи.">
+<meta property="og:image" content="./assets/work/coke-crew.jpg">
+<meta property="og:locale" content="ru_RU">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./styles/tokens.css">
+<link rel="stylesheet" href="./styles/base.css">
+
+<script type="module" src="./scripts/kontakty.js" defer></script>
+
+<style>
+  @media (max-width: 1040px) {
+    .c-hero { height: auto !important; min-height: 460px !important; padding: 30px 24px !important; }
+    .c-h1 { font-size: 52px !important; }
+    .c-form-grid { grid-template-columns: 1fr !important; }
+    .c-form-head { grid-template-columns: 1fr !important; gap: 26px !important; }
+    .c-panel { padding: 36px 26px !important; }
+  }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="Firmachi — на главную">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Firmachi</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Основная навигация">
+      <a href="./index.html">Главная</a>
+      <a href="./uslugi.html">Услуги</a>
+      <a href="./portfolio.html">Портфолио</a>
+      <a href="./kontakty.html" aria-current="page">Контакты</a>
+    </nav>
+
+    <a class="header-cta-icon" href="#form" aria-label="Перейти к форме заявки">↗</a>
+  </header>
+
+  <!-- ---- Hero ------------------------------------------------------------ -->
+  <section class="c-hero" style="position:relative;height:60vh;min-height:520px;overflow:hidden;border-radius:6px;background:var(--off-black);display:flex;flex-direction:column;justify-content:flex-end;padding:44px 48px">
+    <img src="./assets/work/coke-crew.jpg" alt="Съёмочная группа Firmachi на площадке" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+    <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,10,10,0.5) 0%,rgba(10,10,10,0.14) 34%,rgba(10,10,10,0.8) 100%)"></div>
+
+    <div style="position:absolute;top:34px;left:48px;z-index:2;display:flex;align-items:center;gap:14px">
+      <span style="width:14px;height:14px;background:var(--red-clay);border-radius:3px;display:block;flex-shrink:0"></span>
+      <span style="padding:9px 20px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);font-size:13px;letter-spacing:0.02em">Главная — Контакты</span>
+    </div>
+
+    <div style="position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:44px;flex-wrap:wrap;color:var(--white)">
+      <h1 class="c-h1" style="font-size:clamp(48px,6.4vw,100px);line-height:0.94;letter-spacing:-0.04em;font-weight:600;color:var(--white)">Свяжитесь<br>с Firmachi</h1>
+      <p style="font-size:16px;line-height:1.55;color:rgba(246,244,240,0.82);max-width:34ch;padding-bottom:10px">Отвечаем в течение рабочего дня: обсудим задачу, сроки и бюджет, предложим формат созвона или встречи.</p>
+    </div>
+  </section>
+
+  <!-- ---- Contact info + form ------------------------------------------------ -->
+  <section id="form" style="padding:24px 0 0;scroll-margin-top:24px">
+    <div class="c-panel" style="border-radius:6px;background:var(--warm-white);border:1px solid var(--ink-10);padding:64px 56px">
+      <div class="c-form-head" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:end;margin-bottom:56px">
+        <h2 style="font-size:clamp(38px,5vw,76px);line-height:0.96;letter-spacing:-0.035em;font-weight:600">Давайте обсудим<br>ваш проект</h2>
+        <p style="font-size:16px;line-height:1.6;color:var(--ink-60);max-width:40ch;padding-bottom:10px">Опишите задачу в двух словах — этого достаточно, чтобы мы вернулись с вопросами и предварительной оценкой.</p>
+      </div>
+
+      <div data-success-panel hidden style="padding:80px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
+        <div style="width:60px;height:60px;border-radius:999px;background:linear-gradient(180deg, #2c2c2c 0%, #121212 55%, #060606 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.6);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:600">✓</div>
+        <div style="font-size:clamp(26px,3vw,40px);font-weight:600;letter-spacing:-0.02em">Заявка отправлена</div>
+        <p style="font-size:16px;color:var(--ink-60);max-width:38ch">Спасибо! Мы свяжемся с вами в течение рабочего дня.</p>
+      </div>
+
+      <div data-form-panel>
+        <form data-contact-form name="kontakty" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-direction:column;gap:34px">
+          <input type="hidden" name="form-name" value="kontakty">
+          <p style="position:absolute;left:-9999px" aria-hidden="true">
+            <label>Не заполняйте, если вы человек: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+
+          <div class="c-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:34px">
+            <div>
+              <label for="cf-name" style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Ваше имя</label>
+              <input id="cf-name" name="Имя" type="text" required placeholder="Как к вам обращаться" style="width:100%;padding:19px 24px;border-radius:999px;background:var(--white);border:1px solid var(--ink-14);color:var(--black);font-size:16px">
+            </div>
+            <div>
+              <label for="cf-contact" style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Email или телефон</label>
+              <input id="cf-contact" name="Email или телефон" type="text" required placeholder="you@company.com" style="width:100%;padding:19px 24px;border-radius:999px;background:var(--white);border:1px solid var(--ink-14);color:var(--black);font-size:16px">
+            </div>
+            <div>
+              <label for="cf-company" style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Компания</label>
+              <input id="cf-company" name="Компания" type="text" placeholder="Название бренда или агентства" style="width:100%;padding:19px 24px;border-radius:999px;background:var(--white);border:1px solid var(--ink-14);color:var(--black);font-size:16px">
+            </div>
+            <div>
+              <label style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Тип проекта</label>
+              <input type="hidden" name="Тип проекта" value="ТВ-реклама" data-project-type>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;padding-top:4px">
+                <div class="chip chip--active" data-chip="ТВ-реклама" role="button" tabindex="0" aria-pressed="true">ТВ-реклама</div>
+                <div class="chip" data-chip="Digital-реклама" role="button" tabindex="0" aria-pressed="false">Digital-реклама</div>
+                <div class="chip" data-chip="Корпоративное видео" role="button" tabindex="0" aria-pressed="false">Корпоративное видео</div>
+                <div class="chip" data-chip="Другое" role="button" tabindex="0" aria-pressed="false">Другое</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label for="cf-message" style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Расскажите о проекте</label>
+            <textarea id="cf-message" name="Сообщение" rows="5" placeholder="Задача, желаемые сроки, ориентир по бюджету" style="width:100%;padding:22px 26px;border-radius:24px;background:var(--white);border:1px solid var(--ink-14);color:var(--black);font-size:16px;line-height:1.6;resize:vertical"></textarea>
+          </div>
+
+          <p data-form-error hidden style="font-size:14px;color:var(--red-clay)">Не удалось отправить заявку. Напишите нам напрямую: <a href="mailto:hi@firmachi.kz" style="text-decoration:underline">hi@firmachi.kz</a> или <a href="tel:+77478045541" style="text-decoration:underline">+7 (747) 804 55 41</a>.</p>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:6px">
+            <p style="font-size:14px;color:var(--ink-50);max-width:44ch">Отправляя заявку, вы соглашаетесь на обработку контактных данных для ответа на обращение.</p>
+            <button class="beam beam--dark" type="submit">
+              <span class="beam__sweep" aria-hidden="true"></span>
+              <span class="beam__label">Оставить заявку ↗</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Direct contacts ---------------------------------------------------- -->
+  <section style="padding:56px 8px 0;max-width:1440px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <a href="tel:+77478045541" style="display:block;padding:28px;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12)">
+        <div style="font-size:12px;color:var(--ink-45);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px">Телефон</div>
+        <div style="font-size:17px;font-weight:600">+7 (747) 804 55 41</div>
+      </a>
+      <a href="mailto:hi@firmachi.kz" style="display:block;padding:28px;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12)">
+        <div style="font-size:12px;color:var(--ink-45);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px">Email</div>
+        <div style="font-size:17px;font-weight:600">hi@firmachi.kz</div>
+      </a>
+      <a href="https://t.me/superchil" target="_blank" rel="noopener" style="display:block;padding:28px;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12)">
+        <div style="font-size:12px;color:var(--ink-45);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px">Telegram</div>
+        <div style="font-size:17px;font-weight:600">@superchil</div>
+      </a>
+      <a href="https://wa.me/77058847104" target="_blank" rel="noopener" style="display:block;padding:28px;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12)">
+        <div style="font-size:12px;color:var(--ink-45);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px">WhatsApp</div>
+        <div style="font-size:17px;font-weight:600">+7 (705) 884 71 04</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ---- Footer ---------------------------------------------------------- -->
+  <footer class="site-footer" style="padding:96px 8px 24px">
+    <div class="site-footer__grid" style="padding-bottom:40px;border-bottom:1px solid var(--ink-12);margin-bottom:0">
+      <div>
+        <div class="site-footer__brand">
+          <span class="site-footer__brand-mark" aria-hidden="true"></span>
+          <span class="site-footer__brand-name">Firmachi</span>
+        </div>
+        <p class="site-footer__blurb">Видеопродакшн для ТВ и digital — от сценария до финального монтажа.</p>
+      </div>
+
+      <nav class="site-footer__col" aria-labelledby="footer-nav">
+        <h3 id="footer-nav">Навигация</h3>
+        <a href="./index.html">Главная</a>
+        <a href="./uslugi.html">Услуги</a>
+        <a href="./portfolio.html">Портфолио</a>
+        <a href="./kontakty.html">Контакты</a>
+      </nav>
+
+      <nav class="site-footer__col" aria-labelledby="footer-services">
+        <h3 id="footer-services">Услуги</h3>
+        <a href="./uslugi.html#tv">ТВ-реклама</a>
+        <a href="./uslugi.html#digital">Digital-реклама</a>
+        <a href="./uslugi.html#corporate">Корпоративные видео</a>
+        <a href="./uslugi.html#post">Пост-продакшн</a>
+      </nav>
+
+      <div class="site-footer__col">
+        <h3>Контакты</h3>
+        <a href="tel:+77478045541">+7 (747) 804 55 41</a>
+        <a href="mailto:hi@firmachi.kz">hi@firmachi.kz</a>
+        <a href="https://t.me/superchil" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/77058847104" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="site-footer__bar" style="border-top:none;padding-top:20px">
+      <div>© 2026 Firmachi. Все права защищены.</div>
+      <div class="site-footer__social">
+        <a href="https://t.me/superchil" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* Firmachi design tokens.
+   Palette, type scale, spacing and effects are carried over verbatim from the
+   Claude Design system (firmachi-design-system-17c864ae). The semantic aliases
+   below differ from the design-system defaults on purpose: the shipped system
+   maps them onto a dark surface, while these pages are light ("warm white"). */
+
+:root {
+  /* ---- Palette ------------------------------------------------------- */
+  --black: #0a0a0a;
+  --off-black: #151515;
+  --charcoal: #1f1f1f;
+  --white: #f6f4f0;
+  --warm-white: #efeae2;
+
+  --red-clay: #b8402c;
+  --red-clay-hover: #a33826;
+  --teal-dusk: #3d7688;
+  --sand: #c9a374;
+  --blush: #d99aa0;
+  --sky: #7fa8c9;
+
+  /* Ink tints — the light-surface counterpart to the system's --line-* set. */
+  --ink-08: rgba(10, 10, 10, 0.08);
+  --ink-10: rgba(10, 10, 10, 0.1);
+  --ink-12: rgba(10, 10, 10, 0.12);
+  --ink-14: rgba(10, 10, 10, 0.14);
+  --ink-20: rgba(10, 10, 10, 0.2);
+  --ink-32: rgba(10, 10, 10, 0.32);
+  --ink-40: rgba(10, 10, 10, 0.4);
+  --ink-45: rgba(10, 10, 10, 0.45);
+  --ink-50: rgba(10, 10, 10, 0.5);
+  --ink-55: rgba(10, 10, 10, 0.55);
+  --ink-60: rgba(10, 10, 10, 0.6);
+  --ink-62: rgba(10, 10, 10, 0.62);
+  --ink-70: rgba(10, 10, 10, 0.7);
+  --ink-75: rgba(10, 10, 10, 0.75);
+
+  /* Paper tints — used on the dark hero / CTA panels. */
+  --paper-62: rgba(246, 244, 240, 0.62);
+  --paper-68: rgba(246, 244, 240, 0.68);
+  --paper-70: rgba(246, 244, 240, 0.7);
+  --paper-72: rgba(246, 244, 240, 0.72);
+  --paper-75: rgba(246, 244, 240, 0.75);
+  --paper-78: rgba(246, 244, 240, 0.78);
+  --paper-82: rgba(246, 244, 240, 0.82);
+  --paper-85: rgba(246, 244, 240, 0.85);
+
+  /* Glass, as used over dark media (hero badges, carousel arrows). */
+  --glass-fill: rgba(10, 10, 10, 0.5);
+  --glass-fill-strong: rgba(10, 10, 10, 0.6);
+  --glass-border: rgba(246, 244, 240, 0.24);
+
+  /* ---- Semantic ------------------------------------------------------ */
+  --surface-app: var(--white);
+  --surface-card: var(--warm-white);
+  --surface-inverse: var(--off-black);
+
+  --text-primary: var(--black);
+  --text-secondary: var(--ink-60);
+  --text-tertiary: var(--ink-45);
+  --text-on-inverse: var(--white);
+
+  --border-subtle: var(--ink-12);
+  --border-default: var(--ink-20);
+
+  --accent-primary: var(--red-clay);
+  --focus-ring: var(--ink-40);
+
+  /* ---- Typography ---------------------------------------------------- */
+  --font-sans: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
+
+  --text-display-xl: clamp(48px, 7vw, 96px);
+  --text-display-lg: clamp(36px, 5vw, 64px);
+  --text-display-md: clamp(28px, 3.5vw, 44px);
+  --text-display-sm: clamp(22px, 2.5vw, 30px);
+  --text-body-lg: 19px;
+  --text-body-md: 16px;
+  --text-body-sm: 14px;
+  --text-caption: 12px;
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-widest: 0.12em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Spacing --------------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  --container-max: 1440px;
+  --container-pad: 32px;
+
+  /* ---- Effects --------------------------------------------------------- */
+  --blur-glass: 20px;
+  --blur-heavy: 40px;
+
+  --shadow-card: 0 12px 40px rgba(10, 10, 10, 0.12);
+  --shadow-cta: 0 6px 18px var(--ink-08);
+  --shadow-cta-hover: 0 0 0 1px rgba(10, 10, 10, 0.16), 0 12px 32px rgba(10, 10, 10, 0.16);
+  --shadow-modal: 0 40px 90px rgba(0, 0, 0, 0.6);
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-slide: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --duration-fast: 120ms;
+  --duration-normal: 220ms;
+  --duration-slow: 420ms;
+  --duration-slide: 600ms;
+
+  /* ---- Carousel geometry (Home reels) ---------------------------------- */
+  --reel-height: 420px;
+  --reel-width-active: min(760px, 54vw);
+  --reel-width-near: 19vw;
+  --reel-width-far: 15vw;
+  --reel-gap: 16px;
+}

@@ -1,0 +1,528 @@
+/* Reset + primitives shared across all pages. */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--white);
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--red-clay);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: 'Jost', sans-serif;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--ink-32);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 16px;
+}
+
+/* ---- Header ------------------------------------------------------------ */
+
+.site-header {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 8px 26px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand__mark {
+  width: 16px;
+  height: 16px;
+  background: var(--red-clay);
+  border-radius: 3px;
+  display: block;
+}
+
+.brand__name {
+  font-size: 22px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.01em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.site-nav a {
+  font-size: 15px;
+  color: var(--ink-60);
+}
+
+.site-nav a:hover {
+  color: var(--red-clay);
+}
+
+.site-nav a[aria-current='page'] {
+  color: var(--black);
+  font-weight: var(--weight-semibold);
+}
+
+/* Pill "Оставить заявку" header CTA — used on Home and Uslugi. */
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 8px 8px 14px;
+  border: 1px solid var(--ink-14);
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+  box-shadow: 0 6px 18px var(--ink-08);
+  transition: box-shadow var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.header-cta:hover {
+  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.16), 0 12px 32px rgba(10, 10, 10, 0.16);
+  transform: translateY(-1px);
+  color: var(--black);
+}
+
+.header-cta__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: var(--black);
+  color: var(--white);
+  font-size: var(--text-caption);
+}
+
+/* Round "↗" header CTA — used on Portfolio and Kontakty. */
+.header-cta-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-pill);
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 22px rgba(10, 10, 10, 0.18);
+  transition: box-shadow var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.header-cta-icon:hover {
+  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2), 0 16px 40px rgba(10, 10, 10, 0.28);
+  transform: translateY(-1px);
+  color: var(--white);
+}
+
+/* ---- Beam button (rotating-sweep pill CTA) ------------------------------ */
+
+@keyframes beam-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.beam {
+  position: relative;
+  display: inline-flex;
+  padding: 2px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.beam__sweep {
+  position: absolute;
+  top: -110%;
+  left: -30%;
+  width: 160%;
+  height: 320%;
+  pointer-events: none;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(246, 244, 240, 0.14) 40deg,
+    #f6f4f0 56deg,
+    #ffffff 60deg,
+    transparent 66deg,
+    transparent 198deg,
+    rgba(246, 244, 240, 0.14) 238deg,
+    #f6f4f0 254deg,
+    transparent 262deg,
+    transparent 360deg
+  );
+  animation: beam-spin 8.5s linear infinite;
+}
+
+/* Dark-highlight sweep variant, used for secondary CTAs on a light surface. */
+.beam--dark .beam__sweep {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(10, 10, 10, 0.14) 40deg,
+    #0a0a0a 56deg,
+    rgba(10, 10, 10, 0.9) 60deg,
+    transparent 66deg,
+    transparent 198deg,
+    rgba(10, 10, 10, 0.14) 238deg,
+    #0a0a0a 254deg,
+    transparent 262deg,
+    transparent 360deg
+  );
+}
+
+.beam:hover .beam__sweep {
+  animation-duration: 1.7s;
+}
+
+.beam__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 30px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(180deg, #2c2c2c 0%, #121212 55%, #060606 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -1px 0 rgba(0, 0, 0, 0.6);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+}
+
+.beam__label--sm {
+  padding: 13px 26px;
+}
+
+/* Wrapper glows: applied to the <a> around a .beam, matching the reference
+   design's hover-lift on hero CTAs. */
+.cta-glow {
+  display: inline-flex;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 28px rgba(184, 64, 44, 0.22), 0 2px 8px rgba(10, 10, 10, 0.08);
+  transition: box-shadow var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.cta-glow:hover {
+  box-shadow: 0 0 0 1px rgba(184, 64, 44, 0.28), 0 14px 40px rgba(184, 64, 44, 0.38),
+    0 4px 14px rgba(10, 10, 10, 0.12);
+  transform: translateY(-1px);
+  color: inherit;
+}
+
+.cta-lift {
+  display: inline-flex;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 24px rgba(10, 10, 10, 0.12);
+  transition: box-shadow var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.cta-lift:hover {
+  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.14), 0 14px 38px rgba(10, 10, 10, 0.2);
+  transform: translateY(-1px);
+  color: inherit;
+}
+
+/* ---- Icon button (carousel / player controls) --------------------------- */
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  transition: transform var(--duration-fast) var(--ease-standard),
+    background var(--duration-fast) var(--ease-standard);
+}
+
+.icon-btn:hover {
+  transform: scale(1.06);
+}
+
+.icon-btn--glass {
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  color: var(--white);
+}
+
+.icon-btn--glass:hover {
+  background: rgba(10, 10, 10, 0.68);
+  color: var(--white);
+}
+
+.icon-btn--outline {
+  background: transparent;
+  border: 1px solid var(--border-default);
+  color: var(--black);
+}
+
+.icon-btn--outline:hover {
+  background: var(--ink-08);
+  color: var(--black);
+}
+
+/* ---- Chip picker (Kontakty project-type selector) ------------------------ */
+
+.chip {
+  padding: 14px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+  background: var(--white);
+  color: var(--ink-70);
+  border: 1px solid var(--ink-14);
+  transition: background var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard),
+    transform var(--duration-normal) var(--ease-standard);
+}
+
+.chip:hover {
+  box-shadow: 0 10px 26px rgba(10, 10, 10, 0.14);
+  transform: translateY(-1px);
+}
+
+.chip--active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+/* ---- Marquee (brand logos) ----------------------------------------------- */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__logo {
+  flex-shrink: 0;
+  height: 14px;
+  width: auto;
+  max-width: none;
+  opacity: 0.7;
+  display: block;
+}
+
+/* ---- Footer --------------------------------------------------------------- */
+
+.site-footer {
+  padding: 24px 8px 24px;
+  border-top: 1px solid var(--ink-12);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  margin-bottom: 48px;
+}
+
+.site-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.site-footer__brand-mark {
+  width: 14px;
+  height: 14px;
+  background: var(--red-clay);
+  border-radius: 3px;
+  display: block;
+}
+
+.site-footer__brand-name {
+  font-size: 20px;
+  font-weight: var(--weight-semibold);
+}
+
+.site-footer__blurb {
+  max-width: 280px;
+  font-size: var(--text-body-sm);
+  line-height: var(--leading-normal);
+  color: var(--ink-45);
+}
+
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.site-footer__col h3 {
+  margin-bottom: 8px;
+  font-size: var(--text-caption);
+  font-weight: var(--weight-regular);
+  color: var(--ink-45);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.site-footer__col a {
+  font-size: var(--text-body-sm);
+  color: var(--ink-70);
+}
+
+.site-footer__col a:hover {
+  color: var(--red-clay);
+}
+
+.site-footer__bar {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink-12);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--ink-45);
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 18px;
+}
+
+.site-footer__social a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 860px) {
+  .site-nav {
+    display: none;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beam__sweep {
+    animation: none;
+    transform: rotate(40deg);
+  }
+
+  .marquee__track {
+    animation: none;
+  }
+
+  .icon-btn:hover {
+    transform: none;
+  }
+}

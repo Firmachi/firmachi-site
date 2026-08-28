@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Портфолио — Firmachi</title>
+<meta name="description" content="Портфолио Firmachi: Coke Studio, исторический брендфильм, семейная реклама и beauty-съёмка — реальные кейсы продакшна полного цикла.">
+<meta name="theme-color" content="#f6f4f0">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Портфолио — Firmachi">
+<meta property="og:description" content="Реклама, музыкальные проекты и брендфильмы. Каждый кейс — результат и площадка, на которой он появился.">
+<meta property="og:image" content="./assets/work/coke-final.jpg">
+<meta property="og:locale" content="ru_RU">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./styles/tokens.css">
+<link rel="stylesheet" href="./styles/base.css">
+
+<style>
+  @media (max-width: 1040px) {
+    .w-hero { height: auto !important; min-height: 560px !important; padding: 34px 24px !important; }
+    .w-hero-body { grid-template-columns: 1fr !important; gap: 26px !important; }
+    .w-hero-meta { gap: 20px !important; }
+    .w-hero-meta > span:last-child { margin-left: 0 !important; }
+    .w-h1 { font-size: 60px !important; }
+    .w-split { grid-template-columns: 1fr !important; }
+    .w-pair { grid-template-columns: 1fr !important; }
+    .w-trio { grid-template-columns: 1fr !important; }
+    .w-tall { height: 460px !important; }
+    .w-mid { height: 340px !important; }
+    .w-offset { padding-left: 0 !important; padding-top: 0 !important; }
+    .w-logos { gap: 30px !important; }
+  }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="Firmachi — на главную">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Firmachi</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Основная навигация">
+      <a href="./index.html">Главная</a>
+      <a href="./uslugi.html">Услуги</a>
+      <a href="./portfolio.html" aria-current="page">Портфолио</a>
+      <a href="./kontakty.html">Контакты</a>
+    </nav>
+
+    <a class="header-cta-icon" href="./kontakty.html" aria-label="Оставить заявку">↗</a>
+  </header>
+
+  <!-- ---- Hero ------------------------------------------------------------ -->
+  <section class="w-hero" style="position:relative;height:76vh;min-height:620px;overflow:hidden;border-radius:6px;background:var(--off-black);display:flex;flex-direction:column;justify-content:flex-end;padding:44px 48px">
+    <video src="./assets/portfolio-showreel.mp4" poster="./assets/work/coke-final.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"></video>
+    <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,10,10,0.52) 0%,rgba(10,10,10,0.16) 34%,rgba(10,10,10,0.82) 100%)"></div>
+
+    <div style="position:absolute;top:34px;left:48px;z-index:2;display:flex;align-items:center;gap:14px">
+      <span style="width:14px;height:14px;background:var(--red-clay);border-radius:3px;display:block;flex-shrink:0"></span>
+      <span style="padding:9px 20px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);font-size:13px;letter-spacing:0.02em">Шоурил 2026</span>
+    </div>
+
+    <div class="w-hero-body" style="position:relative;z-index:2;display:grid;grid-template-columns:1.28fr 0.72fr;gap:48px;align-items:end;color:var(--white)">
+      <div>
+        <h1 class="w-h1" style="font-size:clamp(52px,6.6vw,104px);line-height:0.92;letter-spacing:-0.04em;font-weight:600;color:var(--white)">Кадр<br>и то, как он сделан</h1>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:26px;padding-bottom:8px">
+        <p style="font-size:16px;line-height:1.55;color:rgba(246,244,240,0.82);max-width:34ch">Реклама, музыкальные проекты и брендфильмы. Каждый кейс — результат и площадка, на которой он появился.</p>
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <a class="beam cta-glow" href="./kontakty.html">
+            <span class="beam__sweep" aria-hidden="true"></span>
+            <span class="beam__label beam__label--sm">Обсудить проект ↗</span>
+          </a>
+          <a class="beam beam--dark cta-lift" href="./uslugi.html">
+            <span class="beam__sweep" aria-hidden="true"></span>
+            <span class="beam__label beam__label--sm">Об услугах ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-hero-meta" style="position:relative;z-index:2;display:flex;align-items:center;gap:44px;flex-wrap:wrap;padding-top:34px;color:rgba(246,244,240,0.82);font-size:13px">
+      <span style="display:flex;align-items:center;gap:9px"><span style="color:var(--red-clay)">+</span> Продакшн-план</span>
+      <span style="display:flex;align-items:center;gap:9px"><span style="color:var(--red-clay)">+</span> Съёмка и свет</span>
+      <span style="display:flex;align-items:center;gap:9px"><span style="color:var(--red-clay)">+</span> Постпродакшн</span>
+      <span style="margin-left:auto;display:flex;align-items:center;gap:10px;color:rgba(246,244,240,0.62)">Листайте <span>↓</span></span>
+    </div>
+  </section>
+
+  <!-- ---- Trust strip ------------------------------------------------------- -->
+  <section style="padding:56px 8px 0">
+    <div style="display:flex;align-items:center;gap:36px;flex-wrap:wrap;border-bottom:1px solid var(--ink-12);padding-bottom:26px">
+      <div style="font-size:12px;line-height:1.5;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink-50);padding-right:36px;border-right:1px solid var(--ink-12)">Нам доверяют<br>40+ брендов</div>
+      <div class="w-logos" style="display:flex;align-items:center;gap:54px;overflow:hidden;flex:1;justify-content:space-between">
+        <img src="./assets/brands/ink/coca-cola.png" alt="Coca-Cola" style="height:17px;width:auto;opacity:0.62;flex-shrink:0">
+        <img src="./assets/brands/ink/givenchy.png" alt="Givenchy" style="height:11px;width:auto;opacity:0.62;flex-shrink:0">
+        <img src="./assets/brands/ink/honor.png" alt="Honor" style="height:13px;width:auto;opacity:0.62;flex-shrink:0">
+        <img src="./assets/brands/ink/milka.png" alt="Milka" style="height:21px;width:auto;opacity:0.62;flex-shrink:0">
+        <img src="./assets/brands/ink/aifc.png" alt="AIFC" style="height:18px;width:auto;opacity:0.62;flex-shrink:0">
+        <img src="./assets/brands/ink/bi-group.png" alt="BI Group" style="height:18px;width:auto;opacity:0.62;flex-shrink:0">
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Case 01: Coke Studio ------------------------------------------------ -->
+  <section style="padding:80px 8px 0">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:22px">
+      <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap">
+        <span style="font-size:13px;color:var(--ink-40)">01 /</span>
+        <span style="font-size:clamp(30px,3.6vw,50px);font-weight:600;letter-spacing:-0.03em;line-height:1">Coke Studio</span>
+        <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red-clay)">Music · Commercial</span>
+      </div>
+      <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-40)">Final</span>
+    </div>
+    <div class="w-tall" style="position:relative;height:700px;overflow:hidden;background:var(--warm-white)">
+      <img src="./assets/work/coke-final.jpg" alt="Финальный кадр — Coke Studio" style="width:100%;height:100%;object-fit:cover">
+    </div>
+    <div class="w-split" style="display:grid;grid-template-columns:0.56fr 1.44fr;gap:36px;padding-top:36px;align-items:start">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-40);margin-bottom:14px">Production</div>
+        <p style="font-size:15px;line-height:1.62;color:var(--ink-62)">Сцена собиралась под кадр: шанырак на подвесе, световой потолок, круглый подиум. Наша часть — продакшн-план, конструкция декорации, постановка света и съёмка.</p>
+        <div style="display:flex;flex-direction:column;margin-top:24px;font-size:13px;color:var(--ink-50)">
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--ink-12)"><span>Декорация</span><span style="color:var(--black)">Шанырак на подвесе</span></div>
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--ink-12)"><span>Свет</span><span style="color:var(--black)">Софт-потолок + контур</span></div>
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--ink-12);border-bottom:1px solid var(--ink-12)"><span>Формат</span><span style="color:var(--black)">Live-съёмка, 4 камеры</span></div>
+        </div>
+      </div>
+      <div class="w-pair" style="display:grid;grid-template-columns:1fr 1.32fr;gap:20px">
+        <div class="w-mid" style="position:relative;height:440px;overflow:hidden;background:var(--warm-white)">
+          <img src="./assets/work/coke-build.jpg" alt="Сборка декорации" style="width:100%;height:100%;object-fit:cover">
+          <div style="position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:rgba(10,10,10,0.6);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.22);color:var(--white);font-size:10px;letter-spacing:0.14em;text-transform:uppercase">Behind the scenes</div>
+        </div>
+        <div class="w-mid" style="position:relative;height:440px;overflow:hidden;background:var(--warm-white)">
+          <img src="./assets/work/coke-crew.jpg" alt="Съёмочная группа на площадке" style="width:100%;height:100%;object-fit:cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Case 02: Исторический брендфильм ------------------------------------ -->
+  <section style="padding:120px 8px 0">
+    <div class="w-split" style="display:grid;grid-template-columns:1fr 1.12fr;gap:44px;align-items:end">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:20px">
+          <span style="font-size:13px;color:var(--ink-40)">02 /</span>
+          <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red-clay)">Period · Brand film</span>
+        </div>
+        <div style="font-size:clamp(34px,4.6vw,68px);line-height:0.98;letter-spacing:-0.035em;font-weight:600">Исторический<br>брендфильм</div>
+        <p style="font-size:16px;line-height:1.58;color:var(--ink-60);max-width:36ch;margin-top:26px">Экспедиция в степь: локация, юрты и глинобитная деревня, костюмы и гримёрная прямо на площадке. Мы вели продакшн, работали с постановкой кадра и светом при жёстком солнце.</p>
+        <div style="display:flex;flex-direction:column;margin-top:26px;font-size:13px;color:var(--ink-50)">
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--ink-12)"><span>Локация</span><span style="color:var(--black)">Степь, декорации-деревня</span></div>
+          <div style="display:flex;justify-content:space-between;padding:11px 0;border-top:1px solid var(--ink-12);border-bottom:1px solid var(--ink-12)"><span>Работа</span><span style="color:var(--black)">Продакшн · Съёмка · Пост</span></div>
+        </div>
+      </div>
+      <div class="w-tall" style="position:relative;height:720px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/yurt-costume.jpg" alt="Актриса в костюме перед съёмкой" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;top:16px;left:16px;padding:6px 12px;border-radius:999px;background:rgba(10,10,10,0.6);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.22);color:var(--white);font-size:10px;letter-spacing:0.14em;text-transform:uppercase">Final</div>
+      </div>
+    </div>
+    <div class="w-pair" style="display:grid;grid-template-columns:1.3fr 1fr;gap:20px;padding-top:20px">
+      <div class="w-mid" style="position:relative;height:420px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/village-monitor.jpg" alt="Площадка: деревня и монитор" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:rgba(10,10,10,0.6);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.22);color:var(--white);font-size:10px;letter-spacing:0.14em;text-transform:uppercase">Behind the scenes</div>
+      </div>
+      <div class="w-mid" style="position:relative;height:420px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/yurt-light-rig.jpg" alt="Постановка света над юртой" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Case 03: Семейный дастархан ------------------------------------------ -->
+  <section style="padding:120px 8px 0">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:22px">
+      <div style="display:flex;align-items:baseline;gap:20px;flex-wrap:wrap">
+        <span style="font-size:13px;color:var(--ink-40)">03 /</span>
+        <span style="font-size:clamp(30px,3.6vw,50px);font-weight:600;letter-spacing:-0.03em;line-height:1">Семейный дастархан</span>
+        <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red-clay)">FMCG · Commercial</span>
+      </div>
+      <span style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-40)">Final</span>
+    </div>
+    <div class="w-pair" style="display:grid;grid-template-columns:1.24fr 1fr;gap:20px;align-items:start">
+      <div class="w-tall" style="position:relative;height:620px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/home-actress.jpg" alt="Финальный кадр — героиня у стола" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="w-offset" style="padding-top:80px">
+        <div class="w-mid" style="position:relative;height:400px;overflow:hidden;background:var(--warm-white)">
+          <img src="./assets/work/home-food-styling.jpg" alt="Фуд-стайлинг на площадке" style="width:100%;height:100%;object-fit:cover">
+          <div style="position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;background:rgba(10,10,10,0.6);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.22);color:var(--white);font-size:10px;letter-spacing:0.14em;text-transform:uppercase">Behind the scenes</div>
+        </div>
+        <div style="padding-top:24px">
+          <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-40);margin-bottom:12px">Production</div>
+          <p style="font-size:15px;line-height:1.62;color:var(--ink-62);max-width:38ch">Интерьерная съёмка полного цикла: подбор локации, фуд-стайлинг, грим и работа с актёрами. Отдельная задача — держать естественный свет от окна на протяжении всего дня.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w-trio" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;padding-top:20px">
+      <div class="w-mid" style="position:relative;height:300px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/home-makeup.jpg" alt="Грим перед дублем" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="w-mid" style="position:relative;height:300px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/home-table-crew.jpg" alt="Постановка кадра у стола" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="w-mid" style="position:relative;height:300px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/home-topdown.jpg" alt="Верхний кадр площадки" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Case 04: Beauty / Fashion --------------------------------------------- -->
+  <section style="padding:120px 8px 0">
+    <div class="w-split" style="display:grid;grid-template-columns:1.12fr 1fr;gap:44px;align-items:end">
+      <div class="w-tall" style="position:relative;height:660px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/fashion-final.jpg" alt="Финальный кадр — beauty" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;top:16px;left:16px;padding:6px 12px;border-radius:999px;background:rgba(10,10,10,0.6);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.22);color:var(--white);font-size:10px;letter-spacing:0.14em;text-transform:uppercase">Final</div>
+      </div>
+      <div>
+        <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:18px">
+          <span style="font-size:13px;color:var(--ink-40)">04 /</span>
+          <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--red-clay)">Beauty · Fashion</span>
+        </div>
+        <div style="font-size:clamp(30px,3.8vw,54px);line-height:1;letter-spacing:-0.03em;font-weight:600">Студийный<br>beauty-ролик</div>
+        <p style="font-size:16px;line-height:1.58;color:var(--ink-60);max-width:34ch;margin-top:24px">Павильон, циклорама и жёсткий контроль света. Мы отвечали за креатив кадра, операторскую работу и постпродакшн под витрины и digital.</p>
+        <div class="w-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px">
+          <div style="position:relative;height:230px;overflow:hidden;background:var(--warm-white)">
+            <img src="./assets/work/fashion-crew.jpg" alt="Группа в павильоне" style="width:100%;height:100%;object-fit:cover">
+            <div style="position:absolute;top:12px;left:12px;padding:5px 10px;border-radius:999px;background:rgba(10,10,10,0.6);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.22);color:var(--white);font-size:9px;letter-spacing:0.14em;text-transform:uppercase">BTS</div>
+          </div>
+          <div style="position:relative;height:230px;overflow:hidden;background:var(--warm-white)">
+            <img src="./assets/work/studio-beige.jpg" alt="Студийная съёмка на фоне" style="width:100%;height:100%;object-fit:cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Equipment / crew -------------------------------------------------------- -->
+  <section style="padding:130px 8px 0">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:26px">
+      <div style="font-size:clamp(28px,3.4vw,48px);line-height:1;letter-spacing:-0.03em;font-weight:600">Как это <span style="color:var(--ink-32)">делается</span></div>
+      <a href="./uslugi.html" style="font-size:14px;font-weight:500;display:flex;align-items:center;gap:8px">Наши услуги <span style="font-size:12px">↗</span></a>
+    </div>
+    <div class="w-pair" style="display:grid;grid-template-columns:1.5fr 1fr;gap:20px">
+      <div class="w-mid" style="position:relative;height:520px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/rig-closeup.jpg" alt="Камерный риг на площадке" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px;background:linear-gradient(180deg,transparent,rgba(10,10,10,0.86))">
+          <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,244,240,0.72);margin-bottom:8px">Equipment</div>
+          <div style="font-size:20px;font-weight:600;color:var(--white)">Кинокамера, оптика и передача картинки</div>
+        </div>
+      </div>
+      <div class="w-mid" style="position:relative;height:520px;overflow:hidden;background:var(--warm-white)">
+        <img src="./assets/work/dop-road.jpg" alt="Оператор на локации" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px;background:linear-gradient(180deg,transparent,rgba(10,10,10,0.86))">
+          <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,244,240,0.72);margin-bottom:8px">Crew</div>
+          <div style="font-size:20px;font-weight:600;color:var(--white)">Компактная команда на любой локации</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- CTA ------------------------------------------------------------ -->
+  <section style="padding:120px 8px 0">
+    <div style="border-radius:14px;background:var(--off-black);border:1px solid rgba(246,244,240,0.1);padding:56px 44px;color:var(--white);display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
+      <div>
+        <div style="font-size:clamp(28px,3vw,42px);font-weight:600;letter-spacing:-0.02em;margin-bottom:12px;max-width:22ch;color:var(--white)">Хотите такой же результат?</div>
+        <p style="font-size:16px;color:rgba(246,244,240,0.7);max-width:44ch">Расскажите о задаче — покажем, как будем её решать, и пришлём полный шоурил.</p>
+      </div>
+      <a class="beam" href="./kontakty.html">
+        <span class="beam__sweep" aria-hidden="true"></span>
+        <span class="beam__label">Оставить заявку ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ---- Footer ---------------------------------------------------------- -->
+  <footer class="site-footer" style="padding:64px 8px 24px">
+    <div class="site-footer__grid" style="padding-bottom:40px;border-bottom:1px solid var(--ink-12);margin-bottom:0">
+      <div>
+        <div class="site-footer__brand">
+          <span class="site-footer__brand-mark" aria-hidden="true"></span>
+          <span class="site-footer__brand-name">Firmachi</span>
+        </div>
+        <p class="site-footer__blurb">Видеопродакшн для ТВ и digital — от сценария до финального монтажа.</p>
+      </div>
+
+      <nav class="site-footer__col" aria-labelledby="footer-nav">
+        <h3 id="footer-nav">Навигация</h3>
+        <a href="./index.html">Главная</a>
+        <a href="./uslugi.html">Услуги</a>
+        <a href="./portfolio.html">Портфолио</a>
+        <a href="./kontakty.html">Контакты</a>
+      </nav>
+
+      <nav class="site-footer__col" aria-labelledby="footer-services">
+        <h3 id="footer-services">Услуги</h3>
+        <a href="./uslugi.html#tv">ТВ-реклама</a>
+        <a href="./uslugi.html#digital">Digital-реклама</a>
+        <a href="./uslugi.html#corporate">Корпоративные видео</a>
+        <a href="./uslugi.html#post">Пост-продакшн</a>
+      </nav>
+
+      <div class="site-footer__col">
+        <h3>Контакты</h3>
+        <a href="tel:+77478045541">+7 (747) 804 55 41</a>
+        <a href="mailto:hi@firmachi.kz">hi@firmachi.kz</a>
+        <a href="https://t.me/superchil" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/77058847104" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="site-footer__bar" style="border-top:none;padding-top:20px">
+      <div>© 2026 Firmachi. Все права защищены.</div>
+      <div class="site-footer__social">
+        <a href="https://t.me/superchil" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Firmachi — видеопродакшн полного цикла</title>
+<meta name="description" content="Firmachi — видеопродакшн для ТВ и digital в Казахстане. Рекламные ролики от сценария до финального монтажа: съёмка, продюсирование, пост-продакшн.">
+<meta name="theme-color" content="#f6f4f0">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Firmachi — видеопродакшн полного цикла">
+<meta property="og:description" content="Снимаем рекламу, которая работает на результат бренда. 150+ роликов для 40+ брендов.">
+<meta property="og:image" content="./assets/hero-sunburst.jpg">
+<meta property="og:locale" content="ru_RU">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./styles/tokens.css">
+<link rel="stylesheet" href="./styles/base.css">
+
+<script type="module" src="./scripts/main.js"></script>
+
+<style>
+  @media (max-width: 860px) {
+    .home-grid-4 { grid-template-columns: 1fr 1fr !important; }
+    .home-grid-3 { grid-template-columns: 1fr !important; }
+    .home-about-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="Firmachi — на главную">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Firmachi</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Основная навигация">
+      <a href="./index.html" aria-current="page">Главная</a>
+      <a href="./uslugi.html">Услуги</a>
+      <a href="./portfolio.html">Портфолио</a>
+      <a href="./kontakty.html">Контакты</a>
+    </nav>
+
+    <a class="header-cta" href="./kontakty.html">
+      Оставить заявку
+      <span class="header-cta__arrow" aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <!-- ---- Hero ---------------------------------------------------------- -->
+  <section style="position:relative;height:82vh;min-height:620px;display:flex;flex-direction:column;justify-content:flex-end;padding:48px;overflow:hidden;border-radius:6px;background:var(--off-black);color:var(--white)">
+    <div style="position:absolute;inset:0;z-index:0">
+      <video src="./assets/hero-showreel.mp4" poster="./assets/hero-sunburst.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#0a0a0a"></video>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.04) 35%, rgba(0,0,0,0.35) 100%);pointer-events:none"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 40%, transparent 45%, rgba(0,0,0,0.22) 100%);pointer-events:none"></div>
+    </div>
+
+    <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(180deg, rgba(10,10,10,0.18) 0%, rgba(10,10,10,0.10) 22%, rgba(10,10,10,0.30) 62%, rgba(10,10,10,0.94) 100%);pointer-events:none"></div>
+    <div style="position:absolute;left:0;right:0;bottom:0;height:58%;z-index:1;background:radial-gradient(90% 100% at 26% 88%, rgba(10,10,10,0.5) 0%, transparent 72%);pointer-events:none"></div>
+
+    <div style="position:absolute;top:36px;left:48px;z-index:2">
+      <span style="display:inline-flex;align-items:center;padding:9px 20px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);font-size:13px;letter-spacing:0.02em">Видеопродакшн полного цикла</span>
+    </div>
+
+    <div style="position:absolute;top:36px;right:48px;z-index:2;display:flex;align-items:center;gap:14px;padding:14px 18px 14px 14px;border-radius:20px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white)">
+      <div style="width:52px;height:52px;border-radius:12px;overflow:hidden;flex-shrink:0">
+        <img src="./assets/reel-stage-mic.jpg" alt="" width="52" height="52" style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div>
+        <div style="font-size:14px;font-weight:600">150+ роликов</div>
+        <div style="font-size:13px;color:rgba(246,244,240,0.7)">снято для брендов</div>
+      </div>
+    </div>
+
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;gap:24px;max-width:640px">
+      <h1 style="font-size:clamp(46px,5.6vw,88px);line-height:0.96;letter-spacing:-0.035em;font-weight:600;color:var(--white)">Снимаем рекламу, которая работает <span style="font-weight:400">на результат бренда</span></h1>
+      <p style="font-size:17px;color:rgba(246,244,240,0.82);max-width:460px;line-height:1.55;text-wrap:pretty">От сценария до финального монтажа — ролики для ТВ и digital, которые запоминаются зрителю.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+        <a class="beam" href="./kontakty.html">
+          <span class="beam__sweep" aria-hidden="true"></span>
+          <span class="beam__label">Оставить заявку ↗</span>
+        </a>
+        <a class="beam" href="./portfolio.html">
+          <span class="beam__sweep" aria-hidden="true"></span>
+          <span class="beam__label">Смотреть портфолио ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Brands -------------------------------------------------------- -->
+  <section style="padding:56px 0;background:var(--white);border-bottom:1px solid var(--ink-12)">
+    <div style="max-width:1440px;margin:0 auto;padding:0 40px 28px;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="font-size:var(--text-caption);color:var(--ink-45);letter-spacing:var(--tracking-widest);text-transform:uppercase">С нами работают</div>
+      <div style="font-size:var(--text-body-sm);color:var(--ink-45)">40+ брендов</div>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__track" style="gap:48px">
+        <img class="marquee__logo" src="./assets/brands/ink/coca-cola.png" alt="Coca-Cola">
+        <img class="marquee__logo" src="./assets/brands/ink/bi-group.png" alt="BI Group">
+        <img class="marquee__logo" src="./assets/brands/ink/esentai-mall.png" alt="Esentai Mall">
+        <img class="marquee__logo" src="./assets/brands/ink/lc-waikiki.png" alt="LC Waikiki">
+        <img class="marquee__logo" src="./assets/brands/ink/aifc.png" alt="AIFC">
+        <img class="marquee__logo" src="./assets/brands/ink/exeed.png" alt="Exeed">
+        <img class="marquee__logo" src="./assets/brands/ink/givenchy.png" alt="Givenchy">
+        <img class="marquee__logo" src="./assets/brands/ink/milka.png" alt="Milka">
+        <img class="marquee__logo" src="./assets/brands/ink/honor.png" alt="Honor">
+        <img class="marquee__logo" src="./assets/brands/ink/sport-qory.png" alt="Sport Qory">
+        <img class="marquee__logo" src="./assets/brands/ink/ysl.png" alt="Yves Saint Laurent">
+
+        <img class="marquee__logo" src="./assets/brands/ink/coca-cola.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/bi-group.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/esentai-mall.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/lc-waikiki.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/aifc.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/exeed.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/givenchy.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/milka.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/honor.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/sport-qory.png" alt="" aria-hidden="true">
+        <img class="marquee__logo" src="./assets/brands/ink/ysl.png" alt="" aria-hidden="true">
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- Work / carousel ------------------------------------------------ -->
+  <section style="padding:96px 40px 0;max-width:1440px;margin:0 auto">
+    <h2 class="visually-hidden">Избранные работы</h2>
+
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:28px">
+      <div style="display:flex;gap:40px;flex-wrap:wrap">
+        <div><div style="font-size:var(--text-display-sm);font-weight:600">150+</div><div style="font-size:var(--text-body-sm);color:var(--ink-45)">роликов снято</div></div>
+        <div><div style="font-size:var(--text-display-sm);font-weight:600">40+</div><div style="font-size:var(--text-body-sm);color:var(--ink-45)">брендов</div></div>
+        <div><div style="font-size:var(--text-display-sm);font-weight:600">8</div><div style="font-size:var(--text-body-sm);color:var(--ink-45)">лет на рынке</div></div>
+      </div>
+      <a href="./portfolio.html" style="font-size:var(--text-body-md);color:var(--ink-60);border-bottom:1px solid var(--ink-20);padding-bottom:2px">Всё портфолио →</a>
+    </div>
+
+    <div style="position:relative" data-reels>
+      <div style="width:100vw;margin-left:calc(-50vw + 50%);overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:center;gap:var(--reel-gap);padding:8px 0;width:100%" data-reels-track>
+
+          <article data-reel role="button" tabindex="0" style="position:relative;border-radius:24px;overflow:hidden;flex-shrink:0;cursor:pointer;height:var(--reel-height);transition:width var(--duration-slide) var(--ease-slide),opacity var(--duration-slide) ease">
+            <img src="./assets/reel-stage-mic.jpg" alt="Выступление артиста" style="width:100%;height:100%;object-fit:cover">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,0.85));pointer-events:none"></div>
+            <div style="position:absolute;top:16px;left:16px;width:40px;height:40px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:14px;pointer-events:none">▶</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+              <div style="font-size:13px;color:rgba(246,244,240,0.75);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Музыкальный клип</div>
+              <div style="font-size:19px;font-weight:700;color:var(--white)">Выступление артиста</div>
+            </div>
+          </article>
+
+          <article data-reel role="button" tabindex="0" style="position:relative;border-radius:24px;overflow:hidden;flex-shrink:0;cursor:pointer;height:var(--reel-height);transition:width var(--duration-slide) var(--ease-slide),opacity var(--duration-slide) ease">
+            <img src="./assets/reel-kid-shaving.jpg" alt="Утро с папой" style="width:100%;height:100%;object-fit:cover">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,0.85));pointer-events:none"></div>
+            <div style="position:absolute;top:16px;left:16px;width:40px;height:40px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:14px;pointer-events:none">▶</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+              <div style="font-size:13px;color:rgba(246,244,240,0.75);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Реклама</div>
+              <div style="font-size:19px;font-weight:700;color:var(--white)">Утро с папой</div>
+            </div>
+          </article>
+
+          <article data-reel role="button" tabindex="0" style="position:relative;border-radius:24px;overflow:hidden;flex-shrink:0;cursor:pointer;height:var(--reel-height);transition:width var(--duration-slide) var(--ease-slide),opacity var(--duration-slide) ease">
+            <img src="./assets/reel-taillight.jpg" alt="Haval Dargo" style="width:100%;height:100%;object-fit:cover">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,0.85));pointer-events:none"></div>
+            <div style="position:absolute;top:16px;left:16px;width:40px;height:40px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:14px;pointer-events:none">▶</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+              <div style="font-size:13px;color:rgba(246,244,240,0.75);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Автореклама</div>
+              <div style="font-size:19px;font-weight:700;color:var(--white)">Haval Dargo</div>
+            </div>
+          </article>
+
+          <article data-reel role="button" tabindex="0" style="position:relative;border-radius:24px;overflow:hidden;flex-shrink:0;cursor:pointer;height:var(--reel-height);transition:width var(--duration-slide) var(--ease-slide),opacity var(--duration-slide) ease">
+            <img src="./assets/reel-landscape-car.jpg" alt="Haval Dargo — в дороге" style="width:100%;height:100%;object-fit:cover">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,0.85));pointer-events:none"></div>
+            <div style="position:absolute;top:16px;left:16px;width:40px;height:40px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:14px;pointer-events:none">▶</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+              <div style="font-size:13px;color:rgba(246,244,240,0.75);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Автореклама</div>
+              <div style="font-size:19px;font-weight:700;color:var(--white)">Haval Dargo — в дороге</div>
+            </div>
+          </article>
+
+          <article data-reel role="button" tabindex="0" style="position:relative;border-radius:24px;overflow:hidden;flex-shrink:0;cursor:pointer;height:var(--reel-height);transition:width var(--duration-slide) var(--ease-slide),opacity var(--duration-slide) ease">
+            <img src="./assets/reel-bts-photoshoot.jpg" alt="Съёмочная площадка" style="width:100%;height:100%;object-fit:cover">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,0.85));pointer-events:none"></div>
+            <div style="position:absolute;top:16px;left:16px;width:40px;height:40px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:14px;pointer-events:none">▶</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+              <div style="font-size:13px;color:rgba(246,244,240,0.75);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Backstage</div>
+              <div style="font-size:19px;font-weight:700;color:var(--white)">Съёмочная площадка</div>
+            </div>
+          </article>
+
+          <article data-reel role="button" tabindex="0" style="position:relative;border-radius:24px;overflow:hidden;flex-shrink:0;cursor:pointer;height:var(--reel-height);transition:width var(--duration-slide) var(--ease-slide),opacity var(--duration-slide) ease">
+            <img src="./assets/hero-sunburst.jpg" alt="Кейс бренда Е" style="width:100%;height:100%;object-fit:cover">
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,0.85));pointer-events:none"></div>
+            <div style="position:absolute;top:16px;left:16px;width:40px;height:40px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:14px;pointer-events:none">▶</div>
+            <div style="position:absolute;bottom:0;left:0;right:0;padding:20px">
+              <div style="font-size:13px;color:rgba(246,244,240,0.75);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Digital-реклама</div>
+              <div style="font-size:19px;font-weight:700;color:var(--white)">Кейс бренда Е</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:3;display:flex;justify-content:center;gap:calc(var(--reel-width-active) - 120px);pointer-events:none">
+        <button class="icon-btn icon-btn--glass" data-reels-prev type="button" aria-label="Предыдущий ролик" style="pointer-events:auto">←</button>
+        <button class="icon-btn icon-btn--glass" data-reels-next type="button" aria-label="Следующий ролик" style="pointer-events:auto">→</button>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:8px;padding-top:24px" role="tablist" aria-label="Выбор ролика">
+        <button data-dot type="button" role="tab" aria-label="Ролик 1" style="width:8px;height:8px;border-radius:999px;background:var(--ink-20);cursor:pointer;transition:width var(--duration-normal) ease, background var(--duration-normal) ease"></button>
+        <button data-dot type="button" role="tab" aria-label="Ролик 2" style="width:8px;height:8px;border-radius:999px;background:var(--ink-20);cursor:pointer;transition:width var(--duration-normal) ease, background var(--duration-normal) ease"></button>
+        <button data-dot type="button" role="tab" aria-label="Ролик 3" style="width:8px;height:8px;border-radius:999px;background:var(--ink-20);cursor:pointer;transition:width var(--duration-normal) ease, background var(--duration-normal) ease"></button>
+        <button data-dot type="button" role="tab" aria-label="Ролик 4" style="width:8px;height:8px;border-radius:999px;background:var(--ink-20);cursor:pointer;transition:width var(--duration-normal) ease, background var(--duration-normal) ease"></button>
+        <button data-dot type="button" role="tab" aria-label="Ролик 5" style="width:8px;height:8px;border-radius:999px;background:var(--ink-20);cursor:pointer;transition:width var(--duration-normal) ease, background var(--duration-normal) ease"></button>
+        <button data-dot type="button" role="tab" aria-label="Ролик 6" style="width:8px;height:8px;border-radius:999px;background:var(--ink-20);cursor:pointer;transition:width var(--duration-normal) ease, background var(--duration-normal) ease"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- About --------------------------------------------------------- -->
+  <section class="home-about-grid" style="padding:110px 40px 0;max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+        <span style="width:12px;height:12px;background:var(--red-clay);border-radius:2px;display:block"></span>
+        <span style="font-size:var(--text-caption);color:var(--ink-60);letter-spacing:0.08em;text-transform:uppercase">О нас</span>
+      </div>
+      <div style="font-size:var(--text-display-md);line-height:var(--leading-snug);font-weight:400;text-wrap:pretty">Каждый кадр должен работать на бренд, а не просто красиво лежать в портфолио.</div>
+    </div>
+    <div>
+      <p style="font-size:var(--text-body-md);line-height:var(--leading-relaxed);color:var(--ink-60);text-wrap:pretty">Firmachi — продакшн, который делает рекламные ролики для телевидения и digital. Проект идёт от идеи до финального монтажа: сценарий, продюсирование, съёмка, пост-продакшн. Компактная команда держит контроль качества на каждом этапе.</p>
+    </div>
+  </section>
+
+  <!-- ---- Services ------------------------------------------------------ -->
+  <section style="padding:110px 40px 0;max-width:1440px;margin:0 auto">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px;flex-wrap:wrap;gap:12px">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <span style="width:12px;height:12px;background:var(--red-clay);border-radius:2px;display:block"></span>
+          <span style="font-size:var(--text-caption);color:var(--ink-60);letter-spacing:0.08em;text-transform:uppercase">Услуги</span>
+        </div>
+        <h2 style="font-size:var(--text-display-sm);font-weight:600">Что мы делаем</h2>
+      </div>
+      <a href="./uslugi.html" style="font-size:var(--text-body-md);color:var(--ink-60);border-bottom:1px solid var(--ink-20);padding-bottom:2px">Все услуги →</a>
+    </div>
+    <div class="home-grid-4" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px">
+      <a href="./uslugi.html#tv" style="display:block;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12);overflow:hidden">
+        <div style="position:relative;height:120px"><img src="./assets/svc-tv.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><span style="position:absolute;top:10px;left:10px;font-size:11px;padding:4px 10px;border-radius:999px;background:var(--red-clay);color:var(--white)">ТВ</span></div>
+        <div style="padding:22px 22px 26px">
+          <div style="font-size:var(--text-body-md);font-weight:700;margin-bottom:8px">ТВ-реклама</div>
+          <div style="font-size:var(--text-body-sm);color:var(--ink-60);line-height:var(--leading-normal)">Ролики для эфирного и кабельного ТВ полного цикла</div>
+        </div>
+      </a>
+      <a href="./uslugi.html#digital" style="display:block;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12);overflow:hidden">
+        <div style="position:relative;height:120px"><img src="./assets/svc-digital.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><span style="position:absolute;top:10px;left:10px;font-size:11px;padding:4px 10px;border-radius:999px;background:var(--red-clay);color:var(--white)">Digital</span></div>
+        <div style="padding:22px 22px 26px">
+          <div style="font-size:var(--text-body-md);font-weight:700;margin-bottom:8px">Digital-реклама</div>
+          <div style="font-size:var(--text-body-sm);color:var(--ink-60);line-height:var(--leading-normal)">Ролики под соцсети, YouTube и performance-каналы</div>
+        </div>
+      </a>
+      <a href="./uslugi.html#corporate" style="display:block;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12);overflow:hidden">
+        <div style="position:relative;height:120px"><img src="./assets/svc-corporate.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><span style="position:absolute;top:10px;left:10px;font-size:11px;padding:4px 10px;border-radius:999px;background:var(--red-clay);color:var(--white)">Corp</span></div>
+        <div style="padding:22px 22px 26px">
+          <div style="font-size:var(--text-body-md);font-weight:700;margin-bottom:8px">Корпоративные видео</div>
+          <div style="font-size:var(--text-body-sm);color:var(--ink-60);line-height:var(--leading-normal)">Имиджевые ролики, видео для мероприятий и HR</div>
+        </div>
+      </a>
+      <a href="./uslugi.html#post" style="display:block;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12);overflow:hidden">
+        <div style="position:relative;height:120px"><img src="./assets/svc-post.jpg" alt="" style="width:100%;height:100%;object-fit:cover"><span style="position:absolute;top:10px;left:10px;font-size:11px;padding:4px 10px;border-radius:999px;background:var(--red-clay);color:var(--white)">Post</span></div>
+        <div style="padding:22px 22px 26px">
+          <div style="font-size:var(--text-body-md);font-weight:700;margin-bottom:8px">Пост-продакшн</div>
+          <div style="font-size:var(--text-body-sm);color:var(--ink-60);line-height:var(--leading-normal)">Монтаж, цветокоррекция, графика и звук</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ---- Testimonials ---------------------------------------------------- -->
+  <section style="padding:110px 40px 0;max-width:1440px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+      <span style="width:12px;height:12px;background:var(--red-clay);border-radius:2px;display:block"></span>
+      <span style="font-size:var(--text-caption);color:var(--ink-60);letter-spacing:0.08em;text-transform:uppercase">Отзывы</span>
+    </div>
+    <h2 style="font-size:var(--text-display-sm);font-weight:600;margin-bottom:32px">Что говорят клиенты</h2>
+    <div class="home-grid-3" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+      <div style="padding:32px;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12);display:flex;flex-direction:column;gap:24px;min-height:220px;justify-content:space-between">
+        <div style="font-size:var(--text-body-sm);color:var(--ink-75);line-height:var(--leading-relaxed)">Наше агентство Insider на протяжении долгого времени успешно сотрудничает с Firmachi. За это время мы реализовали множество проектов для крупных брендов, таких как Givenchy, Armani, L'Oréal Paris и других, и каждый раз убеждаемся в высоком профессионализме команды видео-продакшна.</div>
+        <div><div style="font-size:var(--text-body-sm);font-weight:600">Сыздыкова Лаура Ерлановна</div><div style="font-size:var(--text-caption);color:var(--ink-45)">Руководитель контент отдела и production, Insider</div></div>
+      </div>
+      <div style="padding:32px;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12);display:flex;flex-direction:column;gap:24px;min-height:220px;justify-content:space-between">
+        <div style="font-size:var(--text-body-sm);color:var(--ink-75);line-height:var(--leading-relaxed)">Ребята из Firmachi — профессионалы своего дела, с ними мы за короткий период реализовали проект рекламного ролика наших кинозалов.</div>
+        <div><div style="font-size:var(--text-body-sm);font-weight:600">Ануар Бекметов</div><div style="font-size:var(--text-caption);color:var(--ink-45)">Маркетинг директор, Kinopark</div></div>
+      </div>
+      <div style="padding:32px;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12);display:flex;flex-direction:column;gap:24px;min-height:220px;justify-content:space-between">
+        <div style="font-family:var(--font-mono);font-size:var(--text-body-sm);color:var(--ink-45);line-height:var(--leading-relaxed)">// здесь появится отзыв клиента</div>
+        <div><div style="font-size:var(--text-body-sm);font-weight:600">Имя, должность</div><div style="font-size:var(--text-caption);color:var(--ink-45)">Компания</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---- CTA ------------------------------------------------------------ -->
+  <section style="padding:110px 8px">
+    <div style="max-width:1440px;margin:0 auto;border-radius:14px;background:var(--off-black);border:1px solid rgba(246,244,240,0.1);padding:56px 44px;color:var(--white);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px">
+      <div>
+        <h2 style="font-size:clamp(28px,3vw,42px);font-weight:600;letter-spacing:-0.02em;margin-bottom:12px;max-width:24ch;color:var(--white)">Готовы снять то, что запомнится?</h2>
+        <p style="font-size:16px;color:rgba(246,244,240,0.7);max-width:44ch">Расскажите о задаче — обсудим сроки, бюджет и подход в течение дня.</p>
+      </div>
+      <a class="beam" href="./kontakty.html">
+        <span class="beam__sweep" aria-hidden="true"></span>
+        <span class="beam__label">Оставить заявку ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ---- Footer ---------------------------------------------------------- -->
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div>
+        <div class="site-footer__brand">
+          <span class="site-footer__brand-mark" aria-hidden="true"></span>
+          <span class="site-footer__brand-name">Firmachi</span>
+        </div>
+        <p class="site-footer__blurb">Видеопродакшн для ТВ и digital — от сценария до финального монтажа.</p>
+      </div>
+
+      <nav class="site-footer__col" aria-labelledby="footer-nav">
+        <h3 id="footer-nav">Навигация</h3>
+        <a href="./index.html">Главная</a>
+        <a href="./uslugi.html">Услуги</a>
+        <a href="./portfolio.html">Портфолио</a>
+        <a href="./kontakty.html">Контакты</a>
+      </nav>
+
+      <nav class="site-footer__col" aria-labelledby="footer-services">
+        <h3 id="footer-services">Услуги</h3>
+        <a href="./uslugi.html#tv">ТВ-реклама</a>
+        <a href="./uslugi.html#digital">Digital-реклама</a>
+        <a href="./uslugi.html#corporate">Корпоративные видео</a>
+        <a href="./uslugi.html#post">Пост-продакшн</a>
+      </nav>
+
+      <div class="site-footer__col">
+        <h3>Контакты</h3>
+        <a href="tel:+77478045541">+7 (747) 804 55 41</a>
+        <a href="mailto:hi@firmachi.kz">hi@firmachi.kz</a>
+        <a href="https://t.me/superchil" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/77058847104" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="site-footer__bar">
+      <div>© 2026 Firmachi. Все права защищены.</div>
+      <div class="site-footer__social">
+        <a href="https://t.me/superchil" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ---- Player modal ------------------------------------------------------ -->
+<div data-player hidden role="dialog" aria-modal="true" aria-label="Просмотр ролика" style="position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:40px;background:rgba(5,5,5,0.86);backdrop-filter:blur(12px)">
+  <div style="position:relative;width:min(1100px,100%);border-radius:32px;overflow:hidden;background:var(--warm-white);border:1px solid var(--ink-12);box-shadow:var(--shadow-modal)">
+    <div style="position:relative;aspect-ratio:16/9;background:#000">
+      <video data-player-video controls playsinline hidden style="width:100%;height:100%;object-fit:contain;background:#000"></video>
+      <div data-player-empty style="position:absolute;inset:0">
+        <img src="./assets/hero-stage.jpg" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0.5">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px">
+          <div style="width:64px;height:64px;border-radius:999px;background:var(--glass-fill-strong);backdrop-filter:blur(20px);border:1px solid var(--glass-border);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--white)">▶</div>
+          <div style="font-size:var(--text-body-md);color:var(--ink-60);max-width:340px">Видеофайл ещё не загружен — добавьте ссылку на ролик, и он откроется здесь.</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:24px 28px">
+      <div>
+        <div style="font-size:13px;color:var(--ink-45);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px" data-player-kicker>Из портфолио</div>
+        <div style="font-size:19px;font-weight:700" data-player-title>Просмотр ролика</div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="icon-btn icon-btn--outline" data-player-prev type="button" aria-label="Предыдущий ролик">←</button>
+        <button class="icon-btn icon-btn--outline" data-player-next type="button" aria-label="Следующий ролик">→</button>
+      </div>
+    </div>
+    <button class="icon-btn icon-btn--glass" data-player-close type="button" aria-label="Закрыть" style="position:absolute;top:16px;right:16px;z-index:2">✕</button>
+  </div>
+</div>
+
+</body>
+</html>
