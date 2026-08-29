@@ -21,8 +21,11 @@ export function createCarousel({ root, onActivate }) {
   function render() {
     slides.forEach((slide, i) => {
       const slot = wrap(i - index + CENTRE_SLOT);
-      const parked = slot === 0;
       const distance = Math.abs(slot - CENTRE_SLOT);
+      /* Only the centre slide and its two neighbours on each side have widths
+         in CSS; anything further out is parked. With six slides that is the
+         single slot-0 leftover, with nine it is the four furthest away. */
+      const parked = distance > 2;
 
       slide.style.order = String(slot);
       slide.dataset.distance = String(distance);

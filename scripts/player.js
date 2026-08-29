@@ -4,8 +4,21 @@
    empty state otherwise. Esc closes; the arrow keys step through reels and keep
    the carousel underneath in sync. */
 
+/* YouTube and Vimeo pages can't go in a <video>; they need their embed player
+   in an iframe. Anything else (an .mp4 path or URL) plays natively. */
+function toEmbedUrl(url) {
+  const yt = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/);
+  if (yt) return `https://www.youtube.com/embed/${yt[1]}?autoplay=1&rel=0`;
+
+  const vimeo = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if (vimeo) return `https://player.vimeo.com/video/${vimeo[1]}?autoplay=1`;
+
+  return null;
+}
+
 export function createPlayer({ root, reels, onStep }) {
   const video = root.querySelector('[data-player-video]');
+  const embed = root.querySelector('[data-player-embed]');
   const empty = root.querySelector('[data-player-empty]');
   const kicker = root.querySelector('[data-player-kicker]');
   const title = root.querySelector('[data-player-title]');
@@ -15,12 +28,34 @@ export function createPlayer({ root, reels, onStep }) {
 
   const isOpen = () => !root.hidden;
 
+  function stopVideo() {
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+    video.hidden = true;
+  }
+
+  /* Dropping the src is what actually stops an embed — hiding it keeps playing. */
+  function stopEmbed() {
+    embed.removeAttribute('src');
+    embed.hidden = true;
+  }
+
   function render() {
     const reel = reels[index];
     kicker.textContent = reel.kicker;
     title.textContent = reel.title;
 
-    if (reel.video) {
+    stopVideo();
+    stopEmbed();
+
+    const embedUrl = reel.video ? toEmbedUrl(reel.video) : null;
+
+    if (embedUrl) {
+      embed.src = embedUrl;
+      embed.hidden = false;
+      empty.hidden = true;
+    } else if (reel.video) {
       video.src = reel.video;
       video.poster = reel.poster;
       video.hidden = false;
@@ -29,10 +64,6 @@ export function createPlayer({ root, reels, onStep }) {
         /* Autoplay with sound is routinely blocked; the controls still work. */
       });
     } else {
-      video.pause();
-      video.removeAttribute('src');
-      video.load();
-      video.hidden = true;
       empty.hidden = false;
     }
   }
@@ -48,7 +79,8 @@ export function createPlayer({ root, reels, onStep }) {
 
   function close() {
     if (!isOpen()) return;
-    video.pause();
+    stopVideo();
+    stopEmbed();
     root.hidden = true;
     document.body.style.overflow = '';
     lastFocused?.focus();
