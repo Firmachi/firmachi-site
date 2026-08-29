@@ -30,6 +30,16 @@
   [data-reel][data-distance='2'] { width: var(--reel-width-far); opacity: 0.85; }
   [data-reel][data-parked='true'] { width: 0; opacity: 0; pointer-events: none; }
 
+  /* Spacing lives on the slides, not in the track's `gap`: a parked slide has
+     no width but would still eat its share of a gap, and with an uneven number
+     of parked slides on each side that shoves the whole strip off centre. */
+  [data-reel] { margin: 0 calc(var(--reel-gap) / 2); }
+  [data-reel][data-parked='true'] { margin: 0; }
+
+  /* Only the centre reel is in colour. */
+  [data-reel] img { filter: grayscale(1); transition: filter var(--duration-slide) var(--ease-slide); }
+  [data-reel][data-distance='0'] img { filter: grayscale(0); }
+
   [data-dot][aria-current='true'] { width: 30px !important; background: var(--black) !important; }
 
   @media (max-width: 860px) {
@@ -165,7 +175,7 @@
 
     <div style="position:relative" data-reels>
       <div style="width:100vw;margin-left:calc(-50vw + 50%);overflow:hidden">
-        <div style="display:flex;align-items:center;justify-content:center;gap:var(--reel-gap);padding:8px 0;width:100%" data-reels-track>
+        <div style="display:flex;align-items:center;justify-content:center;padding:8px 0;width:100%" data-reels-track>
 
           <article data-reel role="button" tabindex="0" style="position:relative;border-radius:24px;overflow:hidden;flex-shrink:0;cursor:pointer;height:var(--reel-height);transition:width var(--duration-slide) var(--ease-slide),opacity var(--duration-slide) ease">
             <img src="./assets/reel-stage-mic.jpg" alt="Coke Studio" style="width:100%;height:100%;object-fit:cover">
@@ -260,7 +270,7 @@
         </div>
       </div>
 
-      <div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:3;display:flex;justify-content:center;gap:calc(var(--reel-width-active) - 120px);pointer-events:none">
+      <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:var(--reel-width-active);padding:0 20px;display:flex;justify-content:space-between;pointer-events:none">
         <button class="icon-btn icon-btn--glass" data-reels-prev type="button" aria-label="Предыдущий ролик" style="pointer-events:auto">←</button>
         <button class="icon-btn icon-btn--glass" data-reels-next type="button" aria-label="Следующий ролик" style="pointer-events:auto">→</button>
       </div>
@@ -354,8 +364,8 @@
         <div><div style="font-size:var(--text-body-sm);font-weight:600">Ануар Бекметов</div><div style="font-size:var(--text-caption);color:var(--ink-45)">Маркетинг директор, Kinopark</div></div>
       </div>
       <div style="padding:32px;border-radius:24px;background:var(--warm-white);border:1px solid var(--ink-12);display:flex;flex-direction:column;gap:24px;min-height:220px;justify-content:space-between">
-        <div style="font-family:var(--font-mono);font-size:var(--text-body-sm);color:var(--ink-45);line-height:var(--leading-relaxed)">// здесь появится отзыв клиента</div>
-        <div><div style="font-size:var(--text-body-sm);font-weight:600">Имя, должность</div><div style="font-size:var(--text-caption);color:var(--ink-45)">Компания</div></div>
+        <div style="font-size:var(--text-body-sm);color:var(--ink-75);line-height:var(--leading-relaxed)">Работали в сжатые сроки, ролик нужен был к запуску модели. Команда собрала съёмку за неделю и выдала материал, который мы без правок отдали в эфир.</div>
+        <div><div style="font-size:var(--text-body-sm);font-weight:600">Жакупов Рустам</div><div style="font-size:var(--text-caption);color:var(--ink-45)">Маркетолог, Exeed</div></div>
       </div>
     </div>
   </section>
