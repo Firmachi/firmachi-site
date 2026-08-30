@@ -39,9 +39,24 @@ function encode(data) {
     .join('&');
 }
 
+const submitButton = form?.querySelector('button[type="submit"]');
+const submitLabel = submitButton?.querySelector('.beam__label');
+const idleLabel = submitLabel?.textContent;
+
+/* Without this the button stays live through the whole request and a second
+   click sends the brief twice. */
+function setSubmitting(busy) {
+  if (!submitButton) return;
+  submitButton.disabled = busy;
+  submitButton.setAttribute('aria-busy', String(busy));
+  if (submitLabel) submitLabel.textContent = busy ? 'Отправляем…' : idleLabel;
+}
+
 form?.addEventListener('submit', (event) => {
   event.preventDefault();
+  if (submitButton?.disabled) return;
   if (formError) formError.hidden = true;
+  setSubmitting(true);
 
   const data = Object.fromEntries(new FormData(form).entries());
 
@@ -54,9 +69,13 @@ form?.addEventListener('submit', (event) => {
       if (!response.ok) throw new Error(`Netlify Forms responded ${response.status}`);
       formPanel.hidden = true;
       successPanel.hidden = false;
+      /* The form the visitor was looking at is gone, so send focus to what
+         replaced it instead of leaving it on a detached button. */
+      successPanel.focus();
     })
     .catch((error) => {
       console.error('Contact form submission failed:', error);
+      setSubmitting(false);
       if (formError) formError.hidden = false;
     });
 });

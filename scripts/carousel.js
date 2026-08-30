@@ -83,6 +83,11 @@ export function createCarousel({ root, onActivate }) {
     }
   });
 
+  /* Tells base.css that the strip is under script control; until this lands the
+     strip stays an ordinary horizontal scroller, which is what a visitor
+     without JavaScript gets. */
+  root.dataset.carousel = 'on';
+
   render();
 
   return {

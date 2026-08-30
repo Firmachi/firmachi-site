@@ -1,0 +1,259 @@
+/* Motion layer.
+
+   Three things live here: the scroll-reveal system, press feedback for the
+   pressable primitives defined in base.css, and the reel player's open/close
+   transition.
+
+   The reveal states are scoped to [data-motion], which an inline script in each
+   page's <head> sets before first paint — and which scripts/motion.js confirms
+   with data-motion-ready. Without JS the attribute never sticks, so every
+   section renders in its final state instead of staying invisible. */
+
+/* ---- Scroll reveal ------------------------------------------------------- */
+
+/* A one-shot entrance, so it is a CSS animation rather than a transition: it
+   runs off the main thread while the page is still loading images, and it
+   leaves `transition` free for the hover and press states underneath (a card
+   is both a reveal target and a hover target).
+
+   fill-mode is `backwards`, never `forwards` — the animation must hold the
+   start values through its stagger delay, and must release `transform` the
+   moment it ends so .card:hover can own it again. */
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+[data-motion] [data-reveal],
+[data-motion] [data-reveal-group] > * {
+  opacity: 0;
+}
+
+[data-motion] [data-reveal][data-revealed],
+[data-motion] [data-reveal-group][data-revealed] > * {
+  opacity: 1;
+  animation: reveal-in var(--duration-reveal) var(--ease-out) backwards;
+}
+
+/* A group arrives as a sequence rather than a single block. Stagger is
+   decorative — the elements are interactive from the moment they exist, the
+   delay only changes the way they appear. */
+[data-motion] [data-reveal-group][data-revealed] > *:nth-child(2) { animation-delay: 60ms; }
+[data-motion] [data-reveal-group][data-revealed] > *:nth-child(3) { animation-delay: 120ms; }
+[data-motion] [data-reveal-group][data-revealed] > *:nth-child(4) { animation-delay: 180ms; }
+[data-motion] [data-reveal-group][data-revealed] > *:nth-child(5) { animation-delay: 240ms; }
+[data-motion] [data-reveal-group][data-revealed] > *:nth-child(6) { animation-delay: 300ms; }
+[data-motion] [data-reveal-group][data-revealed] > *:nth-child(n + 7) { animation-delay: 340ms; }
+
+/* ---- Split headings ------------------------------------------------------ */
+
+/* scripts/motion.js rebuilds a [data-split] heading as an aria-hidden run of
+   word spans next to an unsplit .visually-hidden copy, so the accessible name
+   stays one continuous string and the words are never read one by one. Without
+   JavaScript the heading is left exactly as authored. */
+
+[data-motion] [data-split-ready] .word {
+  display: inline-block;
+  opacity: 0;
+}
+
+[data-motion] [data-revealed] [data-split-ready] .word,
+[data-motion] [data-split-ready][data-revealed] .word {
+  opacity: 1;
+  animation: reveal-in var(--duration-reveal) var(--ease-out) backwards;
+  animation-delay: calc(var(--word) * 45ms);
+}
+
+/* A split heading hands its entrance to its words; animating the block as well
+   would run two systems over the same property. */
+[data-motion] [data-reveal-group][data-revealed] > [data-split-ready],
+[data-motion] [data-split-ready][data-revealed] {
+  opacity: 1;
+  animation: none;
+}
+
+/* ---- Offscreen animation ------------------------------------------------- */
+
+/* The beam sweep and the logo marquee loop forever. Off screen that is work
+   nobody can see, on a page that already asks a lot of the decoder. */
+/* Two independent reasons to stop: the element is off screen (the observer owns
+   data-idle on the element), or the whole tab is in the background. */
+.beam__sweep[data-idle],
+.marquee__track[data-idle],
+[data-page-hidden] .beam__sweep,
+[data-page-hidden] .marquee__track {
+  animation-play-state: paused;
+}
+
+/* ---- Press feedback ------------------------------------------------------ */
+
+/* `scale` rather than a `transform: scale()` so it composites with the hover
+   lift these already carry instead of replacing it. The transition sits on the
+   component rules in base.css; only .beam and .card are new here. */
+.beam {
+  transition: scale var(--duration-press) var(--ease-out);
+}
+
+.beam:active,
+.header-cta:active,
+.header-cta-icon:active,
+.cta-glow:active,
+.cta-lift:active,
+.chip:active,
+.icon-btn:active,
+.card:active {
+  scale: 0.97;
+}
+
+/* ---- Service card (Home) -------------------------------------------------- */
+
+.card {
+  transition: transform var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out),
+    border-color var(--duration-normal) var(--ease-out),
+    scale var(--duration-press) var(--ease-out);
+}
+
+.card__media img {
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
+    border-color: var(--ink-20);
+  }
+
+  .card:hover .card__media img {
+    transform: scale(1.04);
+  }
+}
+
+/* A tap on a touch screen fires :hover, which would leave a card stuck in its
+   lifted state until the next tap elsewhere. */
+@media (hover: none), (pointer: coarse) {
+  .header-cta:hover,
+  .header-cta-icon:hover,
+  .cta-glow:hover,
+  .cta-lift:hover,
+  .chip:hover,
+  .icon-btn:hover,
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .card__media img {
+    transform: none;
+  }
+}
+
+/* ---- Reel player modal ---------------------------------------------------- */
+
+/* The dialog stays hidden for the length of the exit transition, so it must not
+   swallow clicks meant for the page underneath. */
+[data-player]:not([data-open]) {
+  pointer-events: none;
+}
+
+[data-player] {
+  opacity: 0;
+  transition: opacity var(--duration-modal) var(--ease-out);
+}
+
+[data-player][data-open] {
+  opacity: 1;
+}
+
+/* transform-origin stays centred: a modal isn't anchored to a trigger the way a
+   dropdown is. Scale starts at 0.96, never 0 — nothing appears out of nothing. */
+[data-player-panel] {
+  transform-origin: center;
+  transform: scale(0.96);
+  transition: transform var(--duration-modal) var(--ease-out);
+}
+
+[data-player][data-open] [data-player-panel] {
+  transform: scale(1);
+}
+
+/* ---- Contact form success state ------------------------------------------- */
+
+/* Seen once, at the end of a deliberate action — this is where the delight
+   budget goes. */
+@keyframes success-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes success-mark-in {
+  from {
+    opacity: 0;
+    scale: 0.86;
+  }
+}
+
+[data-success-panel] {
+  animation: success-panel-in 420ms var(--ease-out) both;
+}
+
+[data-success-mark] {
+  animation: success-mark-in 420ms var(--ease-out) 90ms both;
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ---- Reduced motion -------------------------------------------------------- */
+
+/* Fewer and gentler, not none: the reveals still fade so a section doesn't pop
+   in, but nothing travels and nothing waits its turn. */
+@media (prefers-reduced-motion: reduce) {
+  [data-motion] [data-reveal][data-revealed],
+  [data-motion] [data-reveal-group][data-revealed] > *:nth-child(n),
+  [data-motion] [data-revealed] [data-split-ready] .word,
+  [data-motion] [data-split-ready][data-revealed] .word {
+    animation-name: reveal-fade;
+    animation-duration: var(--duration-normal);
+    animation-delay: 0ms;
+  }
+
+  .beam:active,
+  .header-cta:active,
+  .header-cta-icon:active,
+  .cta-glow:active,
+  .cta-lift:active,
+  .chip:active,
+  .icon-btn:active,
+  .card:active {
+    scale: 1;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .card__media img {
+    transform: none;
+  }
+
+  [data-player-panel] {
+    transform: none;
+  }
+
+  [data-success-mark] {
+    animation: none;
+  }
+
+  [data-success-panel] {
+    animation-duration: var(--duration-normal);
+  }
+}

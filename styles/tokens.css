@@ -19,17 +19,25 @@
   --blush: #d99aa0;
   --sky: #7fa8c9;
 
-  /* Ink tints — the light-surface counterpart to the system's --line-* set. */
+  /* Ink tints — the light-surface counterpart to the system's --line-* set.
+
+     The names keep the original ramp's numbering, but the text-bearing tints no
+     longer match it: at their nominal alphas, --ink-40 through --ink-55 landed
+     between 2.68:1 and 4.31:1 on --white, and every one of them is used on
+     11–14px copy. They now sit just above the 4.5:1 floor (checked against
+     --warm-white too, which is the darker of the two surfaces they appear on),
+     which is why the four converge. --ink-08 … --ink-20 are hairlines and fills,
+     never text, so they keep their original values. */
   --ink-08: rgba(10, 10, 10, 0.08);
   --ink-10: rgba(10, 10, 10, 0.1);
   --ink-12: rgba(10, 10, 10, 0.12);
   --ink-14: rgba(10, 10, 10, 0.14);
   --ink-20: rgba(10, 10, 10, 0.2);
-  --ink-32: rgba(10, 10, 10, 0.32);
-  --ink-40: rgba(10, 10, 10, 0.4);
-  --ink-45: rgba(10, 10, 10, 0.45);
-  --ink-50: rgba(10, 10, 10, 0.5);
-  --ink-55: rgba(10, 10, 10, 0.55);
+  --ink-32: rgba(10, 10, 10, 0.45); /* large text + placeholders only → 3:1 */
+  --ink-40: rgba(10, 10, 10, 0.58);
+  --ink-45: rgba(10, 10, 10, 0.585);
+  --ink-50: rgba(10, 10, 10, 0.59);
+  --ink-55: rgba(10, 10, 10, 0.595);
   --ink-60: rgba(10, 10, 10, 0.6);
   --ink-62: rgba(10, 10, 10, 0.62);
   --ink-70: rgba(10, 10, 10, 0.7);
@@ -124,13 +132,20 @@
   --shadow-cta-hover: 0 0 0 1px rgba(10, 10, 10, 0.16), 0 12px 32px rgba(10, 10, 10, 0.16);
   --shadow-modal: 0 40px 90px rgba(0, 0, 0, 0.6);
 
-  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  /* Curves. The built-in CSS easings are too weak to read as intentional, so
+     everything here is an explicit strong curve. --ease-out is the default:
+     it front-loads the movement, which is what makes a 200ms transition feel
+     faster than the same duration eased in. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --ease-slide: cubic-bezier(0.22, 1, 0.36, 1);
 
   --duration-fast: 120ms;
-  --duration-normal: 220ms;
+  --duration-press: 160ms;
+  --duration-normal: 200ms;
+  --duration-modal: 250ms;
   --duration-slow: 420ms;
+  --duration-reveal: 560ms;
   --duration-slide: 600ms;
 
   /* ---- Carousel geometry (Home reels) ---------------------------------- */

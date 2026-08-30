@@ -16,6 +16,12 @@ function toEmbedUrl(url) {
   return null;
 }
 
+/* Matches --duration-modal in styles/tokens.css: the dialog keeps its box while
+   the exit transition plays, and only then goes back to display:none. */
+const EXIT_MS = 250;
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 export function createPlayer({ root, reels, onStep }) {
   const video = root.querySelector('[data-player-video]');
   const embed = root.querySelector('[data-player-embed]');
@@ -25,8 +31,12 @@ export function createPlayer({ root, reels, onStep }) {
 
   let index = 0;
   let lastFocused = null;
+  let exitTimer = null;
 
-  const isOpen = () => !root.hidden;
+  /* data-open, not `hidden`: during the exit the dialog is still in the layout
+     but already on its way out, and reopening then should start from where it
+     is rather than from scratch. */
+  const isOpen = () => root.dataset.open !== undefined;
 
   function stopVideo() {
     video.pause();
@@ -71,7 +81,12 @@ export function createPlayer({ root, reels, onStep }) {
   function open(i) {
     index = i;
     lastFocused = document.activeElement;
+    clearTimeout(exitTimer);
     root.hidden = false;
+    /* Force a reflow so the browser paints the closed state once; without it
+       the transition has no start value and the dialog just appears. */
+    void root.offsetWidth;
+    root.dataset.open = '';
     document.body.style.overflow = 'hidden';
     render();
     root.querySelector('[data-player-close]')?.focus();
@@ -81,9 +96,18 @@ export function createPlayer({ root, reels, onStep }) {
     if (!isOpen()) return;
     stopVideo();
     stopEmbed();
-    root.hidden = true;
+    delete root.dataset.open;
     document.body.style.overflow = '';
     lastFocused?.focus();
+
+    /* Exits the way it entered — same curve, same duration, in reverse. */
+    clearTimeout(exitTimer);
+    exitTimer = setTimeout(
+      () => {
+        root.hidden = true;
+      },
+      reducedMotion.matches ? 0 : EXIT_MS,
+    );
   }
 
   function step(delta) {

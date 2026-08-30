@@ -35,6 +35,7 @@ video {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color var(--duration-fast) ease;
 }
 
 a:hover {
@@ -148,8 +149,9 @@ a:focus-visible {
   font-weight: var(--weight-medium);
   white-space: nowrap;
   box-shadow: 0 6px 18px var(--ink-08);
-  transition: box-shadow var(--duration-normal) var(--ease-standard),
-    transform var(--duration-normal) var(--ease-standard);
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out),
+    scale var(--duration-press) var(--ease-out);
 }
 
 .header-cta:hover {
@@ -184,8 +186,9 @@ a:focus-visible {
   font-size: 17px;
   flex-shrink: 0;
   box-shadow: 0 8px 22px rgba(10, 10, 10, 0.18);
-  transition: box-shadow var(--duration-normal) var(--ease-standard),
-    transform var(--duration-normal) var(--ease-standard);
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out),
+    scale var(--duration-press) var(--ease-out);
 }
 
 .header-cta-icon:hover {
@@ -281,8 +284,9 @@ a:focus-visible {
   display: inline-flex;
   border-radius: var(--radius-pill);
   box-shadow: 0 10px 28px rgba(184, 64, 44, 0.22), 0 2px 8px rgba(10, 10, 10, 0.08);
-  transition: box-shadow var(--duration-normal) var(--ease-standard),
-    transform var(--duration-normal) var(--ease-standard);
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out),
+    scale var(--duration-press) var(--ease-out);
 }
 
 .cta-glow:hover {
@@ -296,8 +300,9 @@ a:focus-visible {
   display: inline-flex;
   border-radius: var(--radius-pill);
   box-shadow: 0 8px 24px rgba(10, 10, 10, 0.12);
-  transition: box-shadow var(--duration-normal) var(--ease-standard),
-    transform var(--duration-normal) var(--ease-standard);
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out),
+    scale var(--duration-press) var(--ease-out);
 }
 
 .cta-lift:hover {
@@ -315,8 +320,9 @@ a:focus-visible {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-pill);
-  transition: transform var(--duration-fast) var(--ease-standard),
-    background var(--duration-fast) var(--ease-standard);
+  transition: transform var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out),
+    scale var(--duration-press) var(--ease-out);
 }
 
 .icon-btn:hover {
@@ -358,9 +364,10 @@ a:focus-visible {
   background: var(--white);
   color: var(--ink-70);
   border: 1px solid var(--ink-14);
-  transition: background var(--duration-fast) var(--ease-standard),
-    box-shadow var(--duration-normal) var(--ease-standard),
-    transform var(--duration-normal) var(--ease-standard);
+  transition: background var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out),
+    scale var(--duration-press) var(--ease-out);
 }
 
 .chip:hover {
@@ -502,10 +509,105 @@ a:focus-visible {
   color: inherit;
 }
 
+/* ---- Monospace voice ----------------------------------------------------- */
+
+/* Case numbers, run-order labels and technical captions — the register a
+   production company already speaks in on a call sheet. */
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- No-JS reel strip ---------------------------------------------------- */
+
+/* scripts/carousel.js marks the root once it has taken over. Until then — and
+   for good if JavaScript never arrives — the strip is an ordinary horizontal
+   scroller, which is a working way to see nine reels rather than a clipped
+   view of one. */
+.reels-viewport {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.reels-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+[data-reels][data-carousel] .reels-viewport {
+  overflow-x: hidden;
+  scroll-snap-type: none;
+}
+
+[data-reels]:not([data-carousel]) [data-reel] {
+  width: min(560px, 78vw);
+  scroll-snap-align: center;
+}
+
+/* The arrows and dots do nothing until the carousel script owns the strip. */
+[data-reels]:not([data-carousel]) [data-reels-prev],
+[data-reels]:not([data-carousel]) [data-reels-next],
+[data-reels]:not([data-carousel]) [data-dot] {
+  display: none;
+}
+
+/* ---- Disabled controls ---------------------------------------------------- */
+
+.beam[disabled],
+.beam[aria-disabled='true'] {
+  cursor: progress;
+  opacity: 0.72;
+}
+
+/* Hero chrome is pinned to the corners on desktop; below this width it collides
+   with the headline — measured at 375px, the badge, the stats card and the H1
+   all overlapped — so it rejoins the flow above the headline instead. */
+@media (max-width: 1040px) {
+  .hero-badge,
+  .hero-stat {
+    position: static !important;
+    align-self: flex-start;
+    max-width: 100%;
+  }
+
+  .hero-badge {
+    margin-bottom: 14px;
+  }
+
+  .hero-stat {
+    margin-bottom: 22px;
+  }
+}
+
 @media (max-width: 860px) {
+  /* Four short links do not need a burger, a focus trap and an aria-expanded
+     contract — they need a second row. This keeps navigation present without
+     JavaScript, which a disclosure panel could not. */
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: 14px;
+  }
+
   .site-nav {
+    order: 3;
+    width: 100%;
+    gap: 18px;
+    justify-content: space-between;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .site-nav::-webkit-scrollbar {
     display: none;
   }
+
+  .site-nav a {
+    white-space: nowrap;
+  }
+
 
   .site-footer__grid {
     grid-template-columns: 1fr 1fr;

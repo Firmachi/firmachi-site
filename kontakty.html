@@ -15,10 +15,28 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="./assets/favicon.svg" color="#b8402c">
 
 <link rel="stylesheet" href="./styles/tokens.css">
 <link rel="stylesheet" href="./styles/base.css">
+<link rel="stylesheet" href="./styles/motion.css">
+
+<script>
+  /* Arms the scroll-reveal states before first paint, so nothing flashes in at
+     its final position and then re-animates. scripts/motion.js answers with
+     data-motion-ready; if it never loads, the timeout drops the attribute again
+     and every section renders as-is. */
+  document.documentElement.dataset.motion = 'on';
+  setTimeout(() => {
+    if (!document.documentElement.dataset.motionReady) {
+      delete document.documentElement.dataset.motion;
+    }
+  }, 2500);
+</script>
+<script type="module" src="./scripts/motion.js"></script>
 
 <script type="module" src="./scripts/kontakty.js" defer></script>
 
@@ -54,30 +72,30 @@
 
   <!-- ---- Hero ------------------------------------------------------------ -->
   <section class="c-hero" style="position:relative;height:60vh;min-height:520px;overflow:hidden;border-radius:6px;background:var(--off-black);display:flex;flex-direction:column;justify-content:flex-end;padding:44px 48px">
-    <img src="./assets/work/coke-crew.jpg" alt="Съёмочная группа Firmachi на площадке" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+    <img decoding="async" src="./assets/work/coke-crew.jpg" alt="Съёмочная группа Firmachi на площадке" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
     <div style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,10,10,0.5) 0%,rgba(10,10,10,0.14) 34%,rgba(10,10,10,0.8) 100%)"></div>
 
-    <div style="position:absolute;top:34px;left:48px;z-index:2;display:flex;align-items:center;gap:14px">
+    <div class="hero-badge" style="position:absolute;top:34px;left:48px;z-index:2;display:flex;align-items:center;gap:14px">
       <span style="width:14px;height:14px;background:var(--red-clay);border-radius:3px;display:block;flex-shrink:0"></span>
       <span style="padding:9px 20px;border-radius:999px;background:rgba(10,10,10,0.5);backdrop-filter:blur(20px);border:1px solid rgba(246,244,240,0.24);color:var(--white);font-size:13px;letter-spacing:0.02em">Главная — Контакты</span>
     </div>
 
-    <div style="position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:44px;flex-wrap:wrap;color:var(--white)">
-      <h1 class="c-h1" style="font-size:clamp(48px,6.4vw,100px);line-height:0.94;letter-spacing:-0.04em;font-weight:600;color:var(--white)">Свяжитесь<br>с Firmachi</h1>
+    <div data-reveal-group style="position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:44px;flex-wrap:wrap;color:var(--white)">
+      <h1 class="c-h1" data-split style="font-size:clamp(48px,6.4vw,100px);line-height:0.94;letter-spacing:-0.04em;font-weight:600;color:var(--white)">Свяжитесь<br>с Firmachi</h1>
       <p style="font-size:16px;line-height:1.55;color:rgba(246,244,240,0.82);max-width:34ch;padding-bottom:10px">Отвечаем в течение рабочего дня: обсудим задачу, сроки и бюджет, предложим формат созвона или встречи.</p>
     </div>
   </section>
 
   <!-- ---- Contact info + form ------------------------------------------------ -->
   <section id="form" style="padding:24px 0 0;scroll-margin-top:24px">
-    <div class="c-panel" style="border-radius:6px;background:var(--warm-white);border:1px solid var(--ink-10);padding:64px 56px">
+    <div class="c-panel" data-reveal style="border-radius:6px;background:var(--warm-white);border:1px solid var(--ink-10);padding:64px 56px">
       <div class="c-form-head" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:end;margin-bottom:56px">
-        <h2 style="font-size:clamp(38px,5vw,76px);line-height:0.96;letter-spacing:-0.035em;font-weight:600">Давайте обсудим<br>ваш проект</h2>
+        <h2 data-split style="font-size:clamp(38px,5vw,76px);line-height:0.96;letter-spacing:-0.035em;font-weight:600">Давайте обсудим<br>ваш проект</h2>
         <p style="font-size:16px;line-height:1.6;color:var(--ink-60);max-width:40ch;padding-bottom:10px">Опишите задачу в двух словах — этого достаточно, чтобы мы вернулись с вопросами и предварительной оценкой.</p>
       </div>
 
-      <div data-success-panel hidden style="padding:80px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
-        <div style="width:60px;height:60px;border-radius:999px;background:linear-gradient(180deg, #2c2c2c 0%, #121212 55%, #060606 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.6);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:600">✓</div>
+      <div data-success-panel hidden tabindex="-1" role="status" aria-live="polite" style="padding:80px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
+        <div data-success-mark style="width:60px;height:60px;border-radius:999px;background:linear-gradient(180deg, #2c2c2c 0%, #121212 55%, #060606 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.6);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:600">✓</div>
         <div style="font-size:clamp(26px,3vw,40px);font-weight:600;letter-spacing:-0.02em">Заявка отправлена</div>
         <p style="font-size:16px;color:var(--ink-60);max-width:38ch">Спасибо! Мы свяжемся с вами в течение рабочего дня.</p>
       </div>
@@ -119,7 +137,7 @@
             <textarea id="cf-message" name="Сообщение" rows="5" placeholder="Задача, желаемые сроки, ориентир по бюджету" style="width:100%;padding:22px 26px;border-radius:24px;background:var(--white);border:1px solid var(--ink-14);color:var(--black);font-size:16px;line-height:1.6;resize:vertical"></textarea>
           </div>
 
-          <p data-form-error hidden style="font-size:14px;color:var(--red-clay)">Не удалось отправить заявку. Напишите нам напрямую: <a href="mailto:hi@firmachi.kz" style="text-decoration:underline">hi@firmachi.kz</a> или <a href="tel:+77058847104" style="text-decoration:underline">+7 (705) 884 7104</a>.</p>
+          <p data-form-error hidden role="alert" aria-live="assertive" style="font-size:14px;color:var(--red-clay)">Не удалось отправить заявку. Напишите нам напрямую: <a href="mailto:hi@firmachi.kz" style="text-decoration:underline">hi@firmachi.kz</a> или <a href="tel:+77058847104" style="text-decoration:underline">+7 (705) 884 7104</a>.</p>
 
           <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:6px">
             <p style="font-size:14px;color:var(--ink-50);max-width:44ch">Отправляя заявку, вы соглашаетесь на обработку контактных данных для ответа на обращение.</p>
@@ -170,7 +188,7 @@
     </div>
 
     <div class="site-footer__bar" style="border-top:none;padding-top:20px">
-      <div>© 2026 Firmachi. Все права защищены.</div>
+      <div>© 2018 Firmachi. Все права защищены.</div>
       <div class="site-footer__social">
         <a href="https://t.me/superchil" target="_blank" rel="noopener">Telegram</a>
         <a href="https://www.instagram.com/firmachi.kz/" target="_blank" rel="noopener">Instagram</a>
