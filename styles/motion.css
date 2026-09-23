@@ -102,7 +102,6 @@
 .header-cta-icon:active,
 .cta-glow:active,
 .cta-lift:active,
-.chip:active,
 .icon-btn:active,
 .card:active {
   scale: 0.97;
@@ -140,7 +139,6 @@
   .header-cta-icon:hover,
   .cta-glow:hover,
   .cta-lift:hover,
-  .chip:hover,
   .icon-btn:hover,
   .card:hover {
     transform: none;
@@ -180,38 +178,6 @@
   transform: scale(1);
 }
 
-/* ---- Contact form success state ------------------------------------------- */
-
-/* Seen once, at the end of a deliberate action — this is where the delight
-   budget goes. */
-@keyframes success-panel-in {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-}
-
-@keyframes success-mark-in {
-  from {
-    opacity: 0;
-    scale: 0.86;
-  }
-}
-
-[data-success-panel] {
-  animation: success-panel-in 420ms var(--ease-out) both;
-}
-
-[data-success-mark] {
-  animation: success-mark-in 420ms var(--ease-out) 90ms both;
-}
-
-@keyframes reveal-fade {
-  from {
-    opacity: 0;
-  }
-}
-
 /* ---- Reduced motion -------------------------------------------------------- */
 
 /* Fewer and gentler, not none: the reveals still fade so a section doesn't pop
@@ -231,7 +197,6 @@
   .header-cta-icon:active,
   .cta-glow:active,
   .cta-lift:active,
-  .chip:active,
   .icon-btn:active,
   .card:active {
     scale: 1;
@@ -247,13 +212,5 @@
 
   [data-player-panel] {
     transform: none;
-  }
-
-  [data-success-mark] {
-    animation: none;
-  }
-
-  [data-success-panel] {
-    animation-duration: var(--duration-normal);
   }
 }

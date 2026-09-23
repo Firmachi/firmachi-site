@@ -71,13 +71,12 @@
 </script>
 <script type="module" src="./scripts/motion.js"></script>
 
-<script type="module" src="./scripts/kontakty.js" defer></script>
 
 <style>
   @media (max-width: 1040px) {
     .c-hero { height: auto !important; min-height: 460px !important; padding: 30px 24px !important; }
     .c-h1 { font-size: 52px !important; }
-    .c-form-grid { grid-template-columns: 1fr !important; }
+    .c-contact-grid { grid-template-columns: 1fr !important; }
     .c-form-head { grid-template-columns: 1fr !important; gap: 26px !important; }
     .c-panel { padding: 36px 26px !important; }
   }
@@ -100,7 +99,7 @@
       <a href="./kontakty.html" aria-current="page">Контакты</a>
     </nav>
 
-    <a class="header-cta-icon" href="#form" aria-label="Перейти к форме заявки">↗</a>
+    <a class="header-cta-icon" href="#contact" aria-label="Перейти к контактам">↗</a>
   </header>
 
   <!-- ---- Hero ------------------------------------------------------------ -->
@@ -120,66 +119,35 @@
   </section>
 
   <!-- ---- Contact info + form ------------------------------------------------ -->
-  <section id="form" style="padding:24px 0 0;scroll-margin-top:24px">
+  <section id="contact" style="padding:24px 0 0;scroll-margin-top:24px">
     <div class="c-panel" data-reveal style="border-radius:6px;background:var(--warm-white);border:1px solid var(--ink-10);padding:64px 56px">
       <div class="c-form-head" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:end;margin-bottom:56px">
         <h2 data-split style="font-size:clamp(38px,5vw,76px);line-height:0.96;letter-spacing:-0.035em;font-weight:600">Давайте обсудим<br>ваш проект</h2>
-        <p style="font-size:16px;line-height:1.6;color:var(--ink-60);max-width:40ch;padding-bottom:10px">Опишите задачу в двух словах — этого достаточно, чтобы мы вернулись с вопросами и предварительной оценкой.</p>
+        <p style="font-size:16px;line-height:1.6;color:var(--ink-60);max-width:40ch;padding-bottom:10px">Напишите в Telegram или WhatsApp — отвечаем в течение рабочего дня.</p>
       </div>
 
-      <div data-success-panel hidden tabindex="-1" role="status" aria-live="polite" style="padding:80px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
-        <div data-success-mark style="width:60px;height:60px;border-radius:999px;background:linear-gradient(180deg, #2c2c2c 0%, #121212 55%, #060606 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.22), inset 0 -1px 0 rgba(0,0,0,0.6);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:600">✓</div>
-        <div style="font-size:clamp(26px,3vw,40px);font-weight:600;letter-spacing:-0.02em">Заявка отправлена</div>
-        <p style="font-size:16px;color:var(--ink-60);max-width:38ch">Спасибо! Мы свяжемся с вами в течение рабочего дня.</p>
+      <div class="c-contact-grid" data-reveal-group style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <a class="card" href="https://t.me/superchil" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:14px;padding:38px 34px;border-radius:24px;background:var(--white);border:1px solid var(--ink-12)">
+          <span class="mono" style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-45)">Мессенджер</span>
+          <span style="font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-0.02em;line-height:1">Telegram</span>
+          <span style="font-size:16px;color:var(--ink-60)">@superchil</span>
+          <span style="margin-top:auto;padding-top:18px;font-size:15px;font-weight:600">Написать ↗</span>
+        </a>
+
+        <a class="card" href="https://wa.me/77058847104" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:14px;padding:38px 34px;border-radius:24px;background:var(--white);border:1px solid var(--ink-12)">
+          <span class="mono" style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-45)">Мессенджер</span>
+          <span style="font-size:clamp(26px,3vw,36px);font-weight:600;letter-spacing:-0.02em;line-height:1">WhatsApp</span>
+          <span class="mono" style="font-size:16px;color:var(--ink-60)">+7 705 884 7104</span>
+          <span style="margin-top:auto;padding-top:18px;font-size:15px;font-weight:600">Написать ↗</span>
+        </a>
       </div>
 
-      <div data-form-panel>
-        <form data-contact-form name="kontakty" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:flex;flex-direction:column;gap:34px">
-          <input type="hidden" name="form-name" value="kontakty">
-          <p style="position:absolute;left:-9999px" aria-hidden="true">
-            <label>Не заполняйте, если вы человек: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
-          </p>
-
-          <div class="c-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:34px">
-            <div>
-              <label for="cf-name" style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Ваше имя</label>
-              <input id="cf-name" name="Имя" type="text" required placeholder="Как к вам обращаться" style="width:100%;padding:19px 24px;border-radius:999px;background:var(--white);border:1px solid var(--ink-14);color:var(--black);font-size:16px">
-            </div>
-            <div>
-              <label for="cf-contact" style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Email или телефон</label>
-              <input id="cf-contact" name="Email или телефон" type="text" required placeholder="you@company.com" style="width:100%;padding:19px 24px;border-radius:999px;background:var(--white);border:1px solid var(--ink-14);color:var(--black);font-size:16px">
-            </div>
-            <div>
-              <label for="cf-company" style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Компания</label>
-              <input id="cf-company" name="Компания" type="text" placeholder="Название бренда или агентства" style="width:100%;padding:19px 24px;border-radius:999px;background:var(--white);border:1px solid var(--ink-14);color:var(--black);font-size:16px">
-            </div>
-            <div>
-              <label style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Тип проекта</label>
-              <input type="hidden" name="Тип проекта" value="ТВ-реклама" data-project-type>
-              <div style="display:flex;gap:10px;flex-wrap:wrap;padding-top:4px">
-                <div class="chip chip--active" data-chip="ТВ-реклама" role="button" tabindex="0" aria-pressed="true">ТВ-реклама</div>
-                <div class="chip" data-chip="Digital-реклама" role="button" tabindex="0" aria-pressed="false">Digital-реклама</div>
-                <div class="chip" data-chip="Корпоративное видео" role="button" tabindex="0" aria-pressed="false">Корпоративное видео</div>
-                <div class="chip" data-chip="Другое" role="button" tabindex="0" aria-pressed="false">Другое</div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <label for="cf-message" style="display:block;font-size:14px;color:var(--ink-55);margin-bottom:12px">Расскажите о проекте</label>
-            <textarea id="cf-message" name="Сообщение" rows="5" placeholder="Задача, желаемые сроки, ориентир по бюджету" style="width:100%;padding:22px 26px;border-radius:24px;background:var(--white);border:1px solid var(--ink-14);color:var(--black);font-size:16px;line-height:1.6;resize:vertical"></textarea>
-          </div>
-
-          <p data-form-error hidden role="alert" aria-live="assertive" style="font-size:14px;color:var(--red-clay)">Не удалось отправить заявку. Напишите нам напрямую: <a href="mailto:hi@firmachi.kz" style="text-decoration:underline">hi@firmachi.kz</a> или <a href="tel:+77058847104" style="text-decoration:underline">+7 (705) 884 7104</a>.</p>
-
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-top:6px">
-            <p style="font-size:14px;color:var(--ink-50);max-width:44ch">Отправляя заявку, вы соглашаетесь на обработку контактных данных для ответа на обращение.</p>
-            <button class="beam beam--dark" type="submit">
-              <span class="beam__sweep" aria-hidden="true"></span>
-              <span class="beam__label">Оставить заявку ↗</span>
-            </button>
-          </div>
-        </form>
+      <div class="c-contact-more" data-reveal style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:40px;padding-top:28px;border-top:1px solid var(--ink-12)">
+        <p style="font-size:15px;color:var(--ink-60);max-width:46ch">Опишите задачу в двух словах — этого достаточно, чтобы мы вернулись с вопросами и предварительной оценкой.</p>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;font-size:16px">
+          <a class="mono" href="tel:+77058847104">+7 (705) 884 7104</a>
+          <a href="mailto:hi@firmachi.kz">hi@firmachi.kz</a>
+        </div>
       </div>
     </div>
   </section>

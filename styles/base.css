@@ -353,34 +353,6 @@ a:focus-visible {
   color: var(--black);
 }
 
-/* ---- Chip picker (Kontakty project-type selector) ------------------------ */
-
-.chip {
-  padding: 14px 22px;
-  border-radius: var(--radius-pill);
-  font-size: 15px;
-  cursor: pointer;
-  user-select: none;
-  background: var(--white);
-  color: var(--ink-70);
-  border: 1px solid var(--ink-14);
-  transition: background var(--duration-fast) var(--ease-out),
-    box-shadow var(--duration-normal) var(--ease-out),
-    transform var(--duration-normal) var(--ease-out),
-    scale var(--duration-press) var(--ease-out);
-}
-
-.chip:hover {
-  box-shadow: 0 10px 26px rgba(10, 10, 10, 0.14);
-  transform: translateY(-1px);
-}
-
-.chip--active {
-  background: var(--black);
-  color: var(--white);
-  border-color: var(--black);
-}
-
 /* ---- Marquee (brand logos) ----------------------------------------------- */
 
 @keyframes marquee {
