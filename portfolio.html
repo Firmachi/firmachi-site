@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="ru">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CQLTG0EMQ0"></script>
 <script>
@@ -13,44 +15,98 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Firmachi",
-  "image": "https://firmachi.kz/assets/work/coke-crew.jpg",
-  "url": "https://firmachi.kz/portfolio",
-  "telephone": "+77058847104",
-  "email": "hi@firmachi.kz",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "улица Желтоксан 87",
-    "addressLocality": "Алматы",
-    "postalCode": "050000",
-    "addressCountry": "KZ"
-  },
-  "areaServed": "Казахстан",
-  "sameAs": [
-    "https://t.me/superchil",
-    "https://www.instagram.com/firmachi.kz/"
-  ],
-  "description": "Портфолио Firmachi: примеры рекламных роликов и видеопроектов для брендов и бизнеса в Казахстане."
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://firmachi.kz/#org",
+      "name": "Firmachi",
+      "url": "https://firmachi.kz/",
+      "logo": "https://firmachi.kz/assets/icon-192.png",
+      "image": "https://firmachi.kz/assets/work/coke-crew.jpg",
+      "telephone": "+77058847104",
+      "email": "hi@firmachi.kz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "улица Желтоксан 87",
+        "addressLocality": "Алматы",
+        "postalCode": "050000",
+        "addressCountry": "KZ"
+      },
+      "areaServed": "Казахстан",
+      "foundingDate": "2018",
+      "sameAs": [
+        "https://t.me/superchil",
+        "https://www.instagram.com/firmachi.kz/"
+      ],
+      "description": "Firmachi — видеопродакшн для ТВ и digital в Казахстане. Рекламные ролики от сценария до финального монтажа: съёмка, продюсирование, пост-продакшн."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://firmachi.kz/#site",
+      "url": "https://firmachi.kz/",
+      "name": "Firmachi",
+      "inLanguage": "ru",
+      "publisher": {
+        "@id": "https://firmachi.kz/#org"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://firmachi.kz/portfolio#page",
+      "url": "https://firmachi.kz/portfolio",
+      "name": "Портфолио: рекламные ролики и клипы | Firmachi",
+      "description": "Портфолио Firmachi: Coke Studio, исторический брендфильм, семейная реклама и beauty-съёмка — реальные кейсы продакшна полного цикла.",
+      "inLanguage": "ru",
+      "isPartOf": {
+        "@id": "https://firmachi.kz/#site"
+      },
+      "about": {
+        "@id": "https://firmachi.kz/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://firmachi.kz/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Портфолио",
+          "item": "https://firmachi.kz/portfolio"
+        }
+      ]
+    }
+  ]
 }
 </script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Портфолио — Firmachi</title>
+<title>Портфолио: рекламные ролики и клипы | Firmachi</title>
 <meta name="description" content="Портфолио Firmachi: Coke Studio, исторический брендфильм, семейная реклама и beauty-съёмка — реальные кейсы продакшна полного цикла.">
 <meta name="theme-color" content="#f6f4f0">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Портфолио — Firmachi">
 <meta property="og:description" content="Реклама, музыкальные проекты и брендфильмы. Каждый кейс — результат и площадка, на которой он появился.">
-<meta property="og:image" content="./assets/work/coke-final.webp">
+<meta property="og:image" content="https://firmachi.kz/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://firmachi.kz/portfolio">
+<meta property="og:site_name" content="Firmachi">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://firmachi.kz/portfolio">
 <meta property="og:locale" content="ru_RU">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="mask-icon" href="./assets/favicon.svg" color="#b8402c">
 
 <link rel="stylesheet" href="./styles/tokens.css">
@@ -398,11 +454,12 @@
         <a href="mailto:hi@firmachi.kz">hi@firmachi.kz</a>
         <a href="https://t.me/superchil" target="_blank" rel="noopener">Telegram</a>
         <a href="https://wa.me/77058847104" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://2gis.kz/almaty/search/%D0%96%D0%B5%D0%BB%D1%82%D0%BE%D0%BA%D1%81%D0%B0%D0%BD%2087" target="_blank" rel="noopener">Алматы, ул. Желтоксан 87</a>
       </div>
     </div>
 
     <div class="site-footer__bar" style="border-top:none;padding-top:20px">
-      <div>© 2018 Firmachi. Все права защищены.</div>
+      <div>© 2018–2026 Firmachi. Все права защищены.</div>
       <div class="site-footer__social">
         <a href="https://t.me/superchil" target="_blank" rel="noopener">Telegram</a>
         <a href="https://www.instagram.com/firmachi.kz/" target="_blank" rel="noopener">Instagram</a>
