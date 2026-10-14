@@ -611,3 +611,36 @@ a:focus-visible {
     transition: none;
   }
 }
+
+/* ---- Language switcher ---------------------------------------------------- */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.lang-switch a {
+  padding: 6px 8px;
+  border-radius: var(--radius-pill);
+  color: var(--ink-60);
+}
+.lang-switch a:hover {
+  color: var(--red-clay);
+}
+.lang-switch a[aria-current='true'] {
+  color: var(--black);
+  font-weight: var(--weight-semibold);
+  background: var(--warm-white);
+}
+@media (min-width: 861px) {
+  .site-header > .site-nav { margin-left: auto; }
+}
+@media (max-width: 560px) {
+  /* Brand, language switcher and CTA share one row: the CTA keeps only its arrow. */
+  .header-cta { font-size: 0; gap: 0; padding: 6px; }
+  .header-cta__arrow { width: 36px; height: 36px; font-size: 15px; }
+  .lang-switch { font-size: 12px; }
+  .lang-switch a { padding: 6px 6px; }
+}
