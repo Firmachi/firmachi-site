@@ -34,11 +34,29 @@
       },
       "areaServed": "Казахстан",
       "foundingDate": "2018",
+      "owns": { "@id": "https://firmachi.kz/#chikchirik" },
       "sameAs": [
         "https://t.me/superchil",
         "https://www.instagram.com/firmachi.kz/"
       ],
       "description": "Firmachi — видеопродакшн для ТВ и digital в Казахстане. Рекламные ролики от сценария до финального монтажа: съёмка, продюсирование, пост-продакшн."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://firmachi.kz/#chikchirik",
+      "name": "Chik-chirik",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS, Android",
+      "url": "https://chikchirik.kz/",
+      "author": { "@id": "https://firmachi.kz/#org" },
+      "publisher": { "@id": "https://firmachi.kz/#org" },
+      "sameAs": [
+        "https://chikchirik.kz/",
+        "https://apps.apple.com/kz/app/chik-chirik/id6802269556",
+        "https://play.google.com/store/apps/details?id=com.chikchirik.chikchirikApp",
+        "https://t.me/Chikchirik_bird_Bot"
+      ],
+      "description": "Приложение по поиску креативных фрилансеров от команды Firmachi. Сервис объединяет заказчиков и креаторов, помогая находить специалистов и реализовывать проекты."
     },
     {
       "@type": "WebSite",
@@ -329,9 +347,9 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="mask-icon" href="./assets/favicon.svg" color="#b8402c">
 
-<link rel="stylesheet" href="./styles/tokens.css?v=20261015">
-<link rel="stylesheet" href="./styles/base.css?v=20261015">
-<link rel="stylesheet" href="./styles/motion.css?v=20261015">
+<link rel="stylesheet" href="./styles/tokens.css?v=20261015b">
+<link rel="stylesheet" href="./styles/base.css?v=20261015b">
+<link rel="stylesheet" href="./styles/motion.css?v=20261015b">
 
 <script>
   /* Arms the scroll-reveal states before first paint, so nothing flashes in at
@@ -345,9 +363,9 @@
     }
   }, 2500);
 </script>
-<script type="module" src="./scripts/motion.js?v=20261015"></script>
+<script type="module" src="./scripts/motion.js?v=20261015b"></script>
 
-<script type="module" src="./scripts/main.js?v=20261015"></script>
+<script type="module" src="./scripts/main.js?v=20261015b"></script>
 
 <style>
   /* Coverflow reel widths, driven by the data-distance/data-parked attributes
@@ -384,6 +402,7 @@
     .home-grid-4 { grid-template-columns: 1fr 1fr !important; }
     .home-grid-3 { grid-template-columns: 1fr !important; }
     .home-about-grid { grid-template-columns: 1fr !important; }
+    .home-product { grid-template-columns: 1fr !important; gap: 28px !important; padding: 32px 26px !important; }
   }
 </style>
 </head>
@@ -630,6 +649,50 @@
     </div>
   </section>
 
+  <!-- ---- Own product ----------------------------------------------------- -->
+  <section id="chikchirik" style="padding:110px 40px 0;max-width:1440px;margin:0 auto;scroll-margin-top:24px">
+    <div class="home-product" data-reveal style="display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:start;padding:52px 44px;border-radius:24px;background:var(--off-black);color:var(--white)">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+          <span style="width:12px;height:12px;background:var(--red-clay);border-radius:2px;display:block"></span>
+          <span class="mono" style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(246,244,240,0.62)">Собственный продукт</span>
+        </div>
+        <h2 style="font-size:var(--text-display-md);line-height:var(--leading-snug);font-weight:600;letter-spacing:-0.02em"><a class="product-title" href="https://chikchirik.kz/" target="_blank" rel="noopener">Chik-chirik <span class="product-title__arrow" aria-hidden="true">↗</span></a></h2>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
+        <p style="font-size:var(--text-body-md);line-height:var(--leading-relaxed);color:rgba(246,244,240,0.82);max-width:52ch;text-wrap:pretty">Chik-chirik — приложение по поиску креативных фрилансеров от команды Firmachi, созданное для развития креативной индустрии. Сервис объединяет заказчиков и креаторов, помогая находить специалистов, реализовывать проекты и создавать новые возможности для профессионального роста.</p>
+        <p style="font-size:var(--text-body-md);line-height:var(--leading-relaxed);color:rgba(246,244,240,0.7);max-width:52ch;text-wrap:pretty">Мы не только производим контент для брендов, но и создаём собственные продукты, развивая идеи от концепции до полноценного сервиса.</p>
+
+        <div class="home-product__links" style="display:flex;gap:12px;flex-wrap:wrap;padding-top:10px">
+          <a class="store-badge" href="https://apps.apple.com/kz/app/chik-chirik/id6802269556" target="_blank" rel="noopener">
+            <svg class="store-badge__glyph" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04c-2.04.027-3.91 1.183-4.961 3.014c-2.117 3.675-.546 9.103 1.519 12.09c1.013 1.454 2.208 3.09 3.792 3.039c1.52-.065 2.09-.987 3.935-.987c1.831 0 2.35.987 3.96.948c1.637-.026 2.676-1.48 3.676-2.948c1.156-1.688 1.636-3.325 1.662-3.415c-.039-.013-3.182-1.221-3.22-4.857c-.026-3.04 2.48-4.494 2.597-4.559c-1.429-2.09-3.623-2.324-4.39-2.376c-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83c-1.207.052-2.662.805-3.532 1.818c-.78.896-1.454 2.338-1.273 3.714c1.338.104 2.715-.688 3.559-1.701"/></svg>
+            <span class="store-badge__text">
+              <span class="store-badge__caption">Загрузите в</span>
+              <span class="store-badge__name">App Store</span>
+            </span>
+          </a>
+
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.chikchirik.chikchirikApp" target="_blank" rel="noopener">
+            <svg class="store-badge__glyph" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 283"><path fill="#ea4335" d="M119.553 134.916L1.06 259.061a32.14 32.14 0 0 0 47.062 19.071l133.327-75.934z"/><path fill="#fbbc04" d="M239.37 113.814L181.715 80.79l-64.898 56.95l65.162 64.28l57.216-32.67a31.345 31.345 0 0 0 0-55.537z"/><path fill="#4285f4" d="M1.06 23.487A30.6 30.6 0 0 0 0 31.61v219.327a32.3 32.3 0 0 0 1.06 8.124l122.555-120.966z"/><path fill="#34a853" d="m120.436 141.274l61.278-60.483L48.564 4.503A32.85 32.85 0 0 0 32.051 0C17.644-.028 4.978 9.534 1.06 23.399z"/></svg>
+            <span class="store-badge__text">
+              <span class="store-badge__caption">Доступно в</span>
+              <span class="store-badge__name">Google Play</span>
+            </span>
+          </a>
+
+          <a class="store-badge store-badge--ghost" href="https://t.me/Chikchirik_bird_Bot" target="_blank" rel="noopener">
+            <svg class="store-badge__glyph" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><linearGradient id="SVG6DaOZcwt" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#2aabee"/><stop offset="100%" stop-color="#229ed9"/></linearGradient></defs><path fill="url(#SVG6DaOZcwt)" d="M128 0C94.06 0 61.48 13.494 37.5 37.49A128.04 128.04 0 0 0 0 128c0 33.934 13.5 66.514 37.5 90.51C61.48 242.506 94.06 256 128 256s66.52-13.494 90.5-37.49c24-23.996 37.5-56.576 37.5-90.51s-13.5-66.514-37.5-90.51C194.52 13.494 161.94 0 128 0"/><path fill="#fff" d="M57.94 126.648q55.98-24.384 74.64-32.152c35.56-14.786 42.94-17.354 47.76-17.441c1.06-.017 3.42.245 4.96 1.49c1.28 1.05 1.64 2.47 1.82 3.467c.16.996.38 3.266.2 5.038c-1.92 20.24-10.26 69.356-14.5 92.026c-1.78 9.592-5.32 12.808-8.74 13.122c-7.44.684-13.08-4.912-20.28-9.63c-11.26-7.386-17.62-11.982-28.56-19.188c-12.64-8.328-4.44-12.906 2.76-20.386c1.88-1.958 34.64-31.748 35.26-34.45c.08-.338.16-1.598-.6-2.262c-.74-.666-1.84-.438-2.64-.258c-1.14.256-19.12 12.152-54 35.686c-5.1 3.508-9.72 5.218-13.88 5.128c-4.56-.098-13.36-2.584-19.9-4.708c-8-2.606-14.38-3.984-13.82-8.41c.28-2.304 3.46-4.662 9.52-7.072"/></svg>
+            <span class="store-badge__text">
+              <span class="store-badge__caption">Открыть в</span>
+              <span class="store-badge__name">Telegram</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ---- Services ------------------------------------------------------ -->
   <section style="padding:110px 40px 0;max-width:1440px;margin:0 auto">
     <div data-reveal style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:32px;flex-wrap:wrap;gap:12px">
@@ -720,6 +783,7 @@
           <span class="site-footer__brand-name">Firmachi</span>
         </div>
         <p class="site-footer__blurb">Видеопродакшн для ТВ и digital — от сценария до финального монтажа.</p>
+        <p class="site-footer__blurb" style="margin-top:10px">Chik-chirik — приложение по поиску креативных фрилансеров, собственный продукт студии.</p>
       </div>
 
       <nav class="site-footer__col" aria-labelledby="footer-nav">

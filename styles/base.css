@@ -311,6 +311,103 @@ a:focus-visible {
   color: inherit;
 }
 
+/* ---- Own-product block --------------------------------------------------- */
+
+.product-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
+  color: var(--white);
+}
+
+.product-title__arrow {
+  font-size: 0.5em;
+  color: rgba(246, 244, 240, 0.6);
+  transition: color var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-title:hover {
+    color: var(--white);
+  }
+
+  .product-title:hover .product-title__arrow {
+    color: var(--white);
+    transform: translate(2px, -2px);
+  }
+}
+
+/* Store badges. Solid white on the dark panel so they read as the panel's
+   primary action rather than as another line of text. */
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 24px 11px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--black);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  transition: box-shadow var(--duration-normal) var(--ease-out),
+    transform var(--duration-normal) var(--ease-out),
+    scale var(--duration-press) var(--ease-out);
+}
+
+.store-badge__glyph {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.store-badge__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.store-badge__caption {
+  font-size: 11px;
+  color: var(--ink-55);
+}
+
+.store-badge__name {
+  font-size: 18px;
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+}
+
+/* Telegram is a bot, not a store — it keeps the shape but gives up the weight. */
+.store-badge--ghost {
+  background: transparent;
+  border: 1px solid rgba(246, 244, 240, 0.28);
+  box-shadow: none;
+  color: var(--white);
+}
+
+.store-badge--ghost .store-badge__caption {
+  color: rgba(246, 244, 240, 0.66);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .store-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38);
+    color: var(--black);
+  }
+
+  .store-badge--ghost:hover {
+    background: rgba(246, 244, 240, 0.1);
+    border-color: rgba(246, 244, 240, 0.5);
+    box-shadow: none;
+    color: var(--white);
+  }
+}
+
+.store-badge:active {
+  scale: 0.97;
+}
+
 /* ---- Icon button (carousel / player controls) --------------------------- */
 
 .icon-btn {
