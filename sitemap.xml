@@ -55,6 +55,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://firmachi.kz/uslugi/ai-production</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://firmachi.kz/kk/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -109,6 +115,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://firmachi.kz/kk/uslugi/ai-production</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://firmachi.kz/en/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -158,6 +170,12 @@
   </url>
   <url>
     <loc>https://firmachi.kz/en/uslugi/postprodakshen</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://firmachi.kz/en/uslugi/ai-production</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
