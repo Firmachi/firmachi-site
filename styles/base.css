@@ -313,6 +313,30 @@ a:focus-visible {
 
 /* ---- Own-product block --------------------------------------------------- */
 
+/* The panel wears ChikChirik's own colour, not Firmachi's black: it is the one
+   place on the site that speaks for a different brand. #0057FF is --blue-500
+   from chikchirik.kz. White text on it measures 5.52:1, so the copy is solid
+   white and pale blue rather than the translucent white used on the dark
+   panels — at 78% opacity the same text drops to 3.91:1 and fails AA. */
+.home-product {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 56px;
+  align-items: start;
+  padding: 52px 44px;
+  border-radius: 24px;
+  background: #0057ff;
+  color: #ffffff;
+}
+
+.home-product__bird {
+  width: 96px;
+  height: auto;
+  margin-bottom: 22px;
+  display: block;
+}
+
+
 .product-title {
   display: inline-flex;
   align-items: baseline;
@@ -348,7 +372,7 @@ a:focus-visible {
   border-radius: var(--radius-pill);
   background: var(--white);
   color: var(--black);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 8px 22px rgba(0, 32, 92, 0.3);
   transition: box-shadow var(--duration-normal) var(--ease-out),
     transform var(--duration-normal) var(--ease-out),
     scale var(--duration-press) var(--ease-out);
@@ -380,25 +404,25 @@ a:focus-visible {
 /* Telegram is a bot, not a store — it keeps the shape but gives up the weight. */
 .store-badge--ghost {
   background: transparent;
-  border: 1px solid rgba(246, 244, 240, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: none;
   color: var(--white);
 }
 
 .store-badge--ghost .store-badge__caption {
-  color: rgba(246, 244, 240, 0.66);
+  color: #eff5ff;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .store-badge:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.38);
+    box-shadow: 0 14px 32px rgba(0, 32, 92, 0.4);
     color: var(--black);
   }
 
   .store-badge--ghost:hover {
-    background: rgba(246, 244, 240, 0.1);
-    border-color: rgba(246, 244, 240, 0.5);
+    background: rgba(255, 255, 255, 0.16);
+    border-color: #ffffff;
     box-shadow: none;
     color: var(--white);
   }
