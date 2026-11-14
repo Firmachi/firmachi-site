@@ -765,3 +765,9 @@ a:focus-visible {
   .lang-switch { font-size: 12px; }
   .lang-switch a { padding: 6px 6px; }
 }
+
+.site-footer__legal {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 12px;
+}
