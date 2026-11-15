@@ -771,3 +771,35 @@ a:focus-visible {
   margin-top: 4px;
   font-size: 12px;
 }
+
+/* ---- Contact form (kontakty) → crm.firmachi.kz ---- */
+.lead-form__title { font-size: clamp(26px, 2.6vw, 36px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; }
+.lead-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; margin-top: 28px; }
+.lead-form__field { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink-60); }
+.lead-form__field--wide { grid-column: 1 / -1; }
+.lead-form input, .lead-form select, .lead-form textarea {
+  font: inherit; font-size: 16px; color: var(--black); background: var(--white);
+  border: 1px solid var(--ink-12); border-radius: 14px; padding: 14px 16px; width: 100%;
+  transition: border-color 0.15s ease;
+}
+.lead-form textarea { resize: vertical; min-height: 120px; }
+.lead-form input:focus-visible, .lead-form select:focus-visible, .lead-form textarea:focus-visible { outline: none; border-color: var(--ink-40); }
+.lead-form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.lead-form__foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 4px; }
+.lead-form__submit {
+  font: inherit; font-size: 16px; font-weight: 600; color: var(--white); background: var(--red-clay);
+  border: 0; border-radius: 999px; padding: 16px 30px; cursor: pointer; transition: background 0.15s ease, transform 0.1s ease;
+}
+.lead-form__submit:hover { background: var(--red-clay-hover); }
+.lead-form__submit:active { transform: scale(0.98); }
+.lead-form__submit:disabled { opacity: 0.6; cursor: wait; }
+.lead-form__note { font-size: 13px; color: var(--ink-45); max-width: 52ch; line-height: 1.5; }
+.lead-form__status { grid-column: 1 / -1; font-size: 15px; min-height: 1.5em; }
+.lead-form__status[data-kind="ok"] { color: var(--teal-dusk); font-weight: 600; }
+.lead-form__status[data-kind="error"] { color: var(--red-clay); }
+@media (max-width: 720px) { .lead-form { grid-template-columns: 1fr; } }
+.lead-form select {
+  appearance: none; -webkit-appearance: none; padding-right: 44px; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230a0a0a' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 18px center;
+}

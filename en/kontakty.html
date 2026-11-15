@@ -204,8 +204,22 @@
         </a>
       </div>
 
-      <div class="c-contact-more" data-reveal style="margin-top:40px;padding-top:28px;border-top:1px solid var(--ink-12)">
-        <p style="font-size:15px;color:var(--ink-60);max-width:46ch">Describe the task in a couple of words — that's enough for us to come back with questions and a preliminary estimate.</p>
+      <div class="c-contact-more" data-reveal style="margin-top:40px;padding-top:36px;border-top:1px solid var(--ink-12)">
+        <h3 class="lead-form__title">Or leave a request</h3>
+        <p style="font-size:15px;color:var(--ink-60);max-width:46ch;margin-top:8px">Describe the task in a couple of words — that's enough for us to come back with questions and a preliminary estimate.</p>
+        <form class="lead-form" data-lead-form novalidate>
+          <label class="lead-form__field"><span>Name</span><input name="name" required maxlength="200" autocomplete="name"></label>
+          <label class="lead-form__field"><span>Phone (WhatsApp)</span><input name="phone" type="tel" required maxlength="30" autocomplete="tel" placeholder="+7 701 123 45 67"></label>
+          <label class="lead-form__field"><span>Company</span><input name="company" maxlength="200" autocomplete="organization" placeholder="optional"></label>
+          <label class="lead-form__field"><span>What do you need</span><select name="service"><option value="">Choose</option><option>Commercial</option><option>Brand film</option><option>Reels / TikTok / SMM</option><option>Branded content</option><option>Post-production</option><option>AI production</option><option>Other</option></select></label>
+          <label class="lead-form__field lead-form__field--wide"><span>Task</span><textarea name="message" rows="4" maxlength="5000" placeholder="Who the video is for, timing, budget — whatever you know"></textarea></label>
+          <label class="lead-form__hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+          <div class="lead-form__foot">
+            <button type="submit" class="lead-form__submit">Send request</button>
+            <p class="lead-form__note">We reply on WhatsApp within one working day. By sending the form you agree to us processing your data to answer the request.</p>
+          </div>
+          <p class="lead-form__status" data-lead-status role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -259,5 +273,6 @@
   </footer>
 
 </div>
+<script src="/scripts/lead.js?v=20261115" defer></script>
 </body>
 </html>
