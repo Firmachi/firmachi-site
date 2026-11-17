@@ -1,0 +1,128 @@
+name: IndexNow
+
+# Сообщает Bing (и остальным участникам IndexNow — Yandex, Seznam, Naver)
+# об изменённых страницах сразу после пуша, не дожидаясь обхода краулером.
+# Индекс Bing — тот самый, из которого ChatGPT и Copilot берут ссылки.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+  workflow_dispatch:
+    inputs:
+      all:
+        description: 'Отправить все URL из sitemap.xml, а не только изменённые'
+        type: boolean
+        default: true
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Собрать список URL
+        id: build
+        env:
+          SEND_ALL: ${{ github.event_name == 'workflow_dispatch' && inputs.all || 'false' }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, subprocess, sys, pathlib
+
+          HOST = "firmachi.kz"
+          ORIGIN = f"https://{HOST}"
+
+          # Ключ берём из самого репозитория: файл <key>.txt в корне, содержимое == имени.
+          key = None
+          for p in pathlib.Path(".").glob("*.txt"):
+              stem = p.stem
+              if re.fullmatch(r"[0-9a-f]{8,128}", stem) and p.read_text().strip() == stem:
+                  key = stem
+                  break
+          if not key:
+              sys.exit("Не найден файл ключа IndexNow в корне репозитория")
+
+          def to_url(path: str) -> str | None:
+              if not path.endswith(".html"):
+                  return None
+              # Файл подтверждения Google и прочие служебные страницы не индексируем.
+              if re.match(r"^google[0-9a-f]+\.html$", path):
+                  return None
+              if path == "index.html":
+                  return ORIGIN + "/"
+              if path.endswith("/index.html"):
+                  return f"{ORIGIN}/{path[:-len('index.html')]}"
+              return f"{ORIGIN}/{path[:-len('.html')]}"
+
+          def from_sitemap() -> list[str]:
+              xml = pathlib.Path("sitemap.xml").read_text(encoding="utf-8")
+              return re.findall(r"<loc>\s*([^<\s]+)\s*</loc>", xml)
+
+          if os.environ.get("SEND_ALL") == "true":
+              urls = from_sitemap()
+              reason = "все URL из sitemap.xml"
+          else:
+              before = os.environ.get("BEFORE_SHA") or ""
+              base = before if re.fullmatch(r"[0-9a-f]{40}", before) and before.strip("0") else "HEAD^"
+              try:
+                  changed = subprocess.run(
+                      ["git", "diff", "--name-only", "--diff-filter=ACMR", base, "HEAD"],
+                      capture_output=True, text=True, check=True,
+                  ).stdout.split()
+              except subprocess.CalledProcessError:
+                  changed = []
+              if "sitemap.xml" in changed:
+                  urls = from_sitemap()
+                  reason = "изменился sitemap.xml — отправляем всё"
+              else:
+                  urls = [u for u in (to_url(p) for p in changed) if u]
+                  reason = f"изменённые страницы ({len(changed)} файлов в диффе)"
+
+          urls = list(dict.fromkeys(urls))
+          print(f"Причина: {reason}")
+          print(f"К отправке: {len(urls)}")
+          for u in urls:
+              print("  ", u)
+
+          payload = {
+              "host": HOST,
+              "key": key,
+              "keyLocation": f"{ORIGIN}/{key}.txt",
+              "urlList": urls,
+          }
+          pathlib.Path("indexnow-payload.json").write_text(
+              json.dumps(payload, ensure_ascii=False), encoding="utf-8"
+          )
+          with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
+              fh.write(f"count={len(urls)}\n")
+          PY
+
+      - name: Отправить в IndexNow
+        if: steps.build.outputs.count != '0'
+        run: |
+          for endpoint in https://api.indexnow.org/indexnow https://www.bing.com/indexnow; do
+            code=$(curl -sS -o /tmp/indexnow-body.txt -w '%{http_code}' \
+              -X POST "$endpoint" \
+              -H 'Content-Type: application/json; charset=utf-8' \
+              --data-binary @indexnow-payload.json)
+            echo "$endpoint -> HTTP $code"
+            cat /tmp/indexnow-body.txt; echo
+            # 200/202 — принято. Остальное роняем, чтобы ошибка была видна.
+            case "$code" in 200|202) ;; *) exit 1 ;; esac
+          done
+          echo "Отправлено URL: ${{ steps.build.outputs.count }}" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Нечего отправлять
+        if: steps.build.outputs.count == '0'
+        run: echo 'Изменённых страниц нет — пропускаем.' >> "$GITHUB_STEP_SUMMARY"
