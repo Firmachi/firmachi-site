@@ -127,6 +127,40 @@ if (hasObserver) {
   loops.forEach((el) => idleObserver.observe(el));
 }
 
+/* ---- Background video ----------------------------------------------------- */
+
+/* Герой крутит шоурил позади текста. Это декорация: кадр-постер говорит то же
+   самое, а файл весит 4,3 МБ — больше, чем вся остальная страница вместе. Поэтому
+   разметка приезжает без src, и решение принимается здесь: на узком экране, на
+   экономном соединении и при просьбе убавить движение видео не грузится вовсе.
+   Постер остаётся в любом случае, так что отказ ничего не ломает — он просто
+   оставляет неподвижный кадр. */
+
+const WIDE_ENOUGH = 768;
+const metered = navigator.connection?.saveData === true;
+const wantsBackdrop = !metered && !reduceMotion.matches && window.innerWidth >= WIDE_ENOUGH;
+
+document.querySelectorAll('video[data-backdrop][data-src]').forEach((video) => {
+  if (!wantsBackdrop) {
+    /* Постер задумывался как заглушка на доли секунды, а теперь остаётся на
+       экране навсегда — и он светлее среднего кадра шоурила. Замер на главной:
+       под абзацем героя постер даёт rgb(207,183,166), контраст с текстом падает
+       до 2.0 при норме 4.5. Множитель 0.5 поднимает его до 5.06.
+
+       Приглушение живёт здесь, а не в motion.css, потому что у героя /uslugi
+       свой инлайновый filter: grayscale(0.35), а инлайн бьёт внешний стиль.
+       Дописываем к существующему фильтру, а не заменяем его. */
+    const existing = video.style.filter;
+    video.style.filter = existing ? `${existing} brightness(0.5)` : 'brightness(0.5)';
+    return;
+  }
+  video.preload = 'auto';
+  video.src = video.dataset.src;
+  /* autoplay в разметке обычно срабатывает и на поздно выставленный src, но
+     политики автовоспроизведения различаются; отказ здесь — не ошибка. */
+  video.play?.().catch(() => {});
+});
+
 /* A backgrounded tab keeps compositing these on some platforms. This is a
    separate flag from data-idle rather than the same one: clearing data-idle on
    the way back would resume the loops that are still off screen, and the

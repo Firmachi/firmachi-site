@@ -6,8 +6,12 @@
 /assets/*
   Cache-Control: public, max-age=604800
 
+# Каждая ссылка на CSS и JS в разметке несёт ?v=ГГГГММДД — он и есть механизм
+# инвалидации, поэтому сами файлы кэшируются навсегда. Обратная сторона: правка
+# стиля или скрипта БЕЗ подъёма ?v= не дойдёт до вернувшегося посетителя целый
+# год. Меняете файл в /styles/ или /scripts/ — поднимаете ключ на всех страницах.
 /styles/*
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /scripts/*
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
