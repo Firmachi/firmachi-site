@@ -38,7 +38,15 @@
         "https://t.me/superchil",
         "https://www.instagram.com/firmachi.kz/"
       ],
-      "description": "Firmachi — Қазақстандағы ТВ мен digital үшін видеопродакшн. Сценарийден соңғы монтажға дейінгі жарнамалық роликтер: түсірілім, продюсерлік, постпродакшн."
+      "description": "Firmachi — Қазақстандағы ТВ мен digital үшін видеопродакшн. Сценарийден соңғы монтажға дейінгі жарнамалық роликтер: түсірілім, продюсерлік, постпродакшн.",
+      "founder": {
+        "@id": "https://firmachi.kz/#chingiz"
+      },
+      "knowsLanguage": [
+        "ru",
+        "kk",
+        "en"
+      ]
     },
     {
       "@type": "WebSite",
@@ -79,6 +87,54 @@
           "position": 2,
           "name": "Қызметтер",
           "item": "https://firmachi.kz/kk/uslugi"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://firmachi.kz/#chingiz",
+      "name": "Chingiz Akbayev",
+      "worksFor": {
+        "@id": "https://firmachi.kz/#org"
+      },
+      "sameAs": [
+        "https://vimeo.com/chimabue"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Тек постпродакшнға тапсырыс беруге бола ма?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Иә. Материал мен міндеттің сипаттамасын жіберіңіз, біз көлем мен мерзімді бағалаймыз."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Branded content жарнамалық роликтен немен ерекшеленеді?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Жарнамалық ролик 15–60 секундта бір хабарды жеткізеді және көрсетілім есебінен жұмыс істейді. Branded content — көрермен өз қалауымен көретін оқиға. Бренд онда сатып алуға тікелей шақыру арқылы емес, тақырып, кейіпкерлер немесе құндылықтар арқылы көрінеді."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Режиссеріңізсіз продюсерлікке тапсырыс беруге бола ма?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Иә. Продакшн-сервис форматында режиссер мен креатив агенттік немесе бренд тарапынан, ал біз түсірілімді ұйымдастыруға жауап береміз."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Бренд үшін Reels өндірісі қанша тұрады?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Құны роликтер пакеті үшін есептеледі және түсірілім күндерінің санына, кастингке және монтаж көлеміне байланысты. Сметаны брифтен кейін дайындаймыз."
+          }
         }
       ]
     }
@@ -144,6 +200,15 @@
     .u-strip { grid-auto-columns: 216px !important; }
   }
 </style>
+<style>
+    .f-item { border-top:1px solid var(--ink-12) }
+    .f-item:last-child { border-bottom:1px solid var(--ink-12) }
+    .f-item summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; padding:22px 0; font-size:19px; font-weight:600; color:var(--black) }
+    .f-item summary::-webkit-details-marker { display:none }
+    .f-item summary span { font-weight:400; color:var(--red-clay); transition:transform .2s }
+    .f-item[open] summary span { transform:rotate(45deg) }
+    .f-a { padding:0 0 24px; font-size:16px; line-height:1.65; color:var(--ink-62); max-width:68ch }
+  </style>
 </head>
 
 <body>
@@ -330,7 +395,12 @@
   </section>
 
   <!-- ---- CTA ------------------------------------------------------------ -->
+  
   <section style="padding:96px 8px 0">
+    <h2 data-split data-reveal style="font-size:var(--text-display-sm);font-weight:600;margin-bottom:32px">Жиі қойылатын сұрақтар</h2>
+    <div data-reveal-group><details class="f-item" open><summary>Тек постпродакшнға тапсырыс беруге бола ма?<span aria-hidden="true">+</span></summary><div class="f-a">Иә. Материал мен міндеттің сипаттамасын жіберіңіз, біз көлем мен мерзімді бағалаймыз.</div></details><details class="f-item"><summary>Branded content жарнамалық роликтен немен ерекшеленеді?<span aria-hidden="true">+</span></summary><div class="f-a">Жарнамалық ролик 15–60 секундта бір хабарды жеткізеді және көрсетілім есебінен жұмыс істейді. Branded content — көрермен өз қалауымен көретін оқиға. Бренд онда сатып алуға тікелей шақыру арқылы емес, тақырып, кейіпкерлер немесе құндылықтар арқылы көрінеді.</div></details><details class="f-item"><summary>Режиссеріңізсіз продюсерлікке тапсырыс беруге бола ма?<span aria-hidden="true">+</span></summary><div class="f-a">Иә. Продакшн-сервис форматында режиссер мен креатив агенттік немесе бренд тарапынан, ал біз түсірілімді ұйымдастыруға жауап береміз.</div></details><details class="f-item"><summary>Бренд үшін Reels өндірісі қанша тұрады?<span aria-hidden="true">+</span></summary><div class="f-a">Құны роликтер пакеті үшін есептеледі және түсірілім күндерінің санына, кастингке және монтаж көлеміне байланысты. Сметаны брифтен кейін дайындаймыз.</div></details></div>
+  </section>
+<section style="padding:96px 8px 0">
     <div data-reveal style="border-radius:14px;background:var(--off-black);color:var(--white);padding:56px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
       <div>
         <h2 data-split style="font-size:clamp(28px,3vw,40px);font-weight:600;margin-bottom:12px;max-width:22ch">Қажетті форматты таппадыңыз ба?</h2>

@@ -38,7 +38,15 @@
         "https://t.me/superchil",
         "https://www.instagram.com/firmachi.kz/"
       ],
-      "description": "Firmachi is video production for TV and digital in Kazakhstan. Commercials from script to final cut: shooting, producing, post-production."
+      "description": "Firmachi is video production for TV and digital in Kazakhstan. Commercials from script to final cut: shooting, producing, post-production.",
+      "founder": {
+        "@id": "https://firmachi.kz/#chingiz"
+      },
+      "knowsLanguage": [
+        "ru",
+        "kk",
+        "en"
+      ]
     },
     {
       "@type": "WebSite",
@@ -79,6 +87,54 @@
           "position": 2,
           "name": "Services",
           "item": "https://firmachi.kz/en/uslugi"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://firmachi.kz/#chingiz",
+      "name": "Chingiz Akbayev",
+      "worksFor": {
+        "@id": "https://firmachi.kz/#org"
+      },
+      "sameAs": [
+        "https://vimeo.com/chimabue"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I order post-production only?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Send a description of the footage and the task, and we'll estimate the scope and timing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is branded content different from a commercial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A commercial delivers one message in 15–60 seconds and works through impressions. Branded content is a story viewers watch by choice. The brand is present through the theme, the characters or the values, not through a direct call to buy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I hire you for production without your director?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In the production service format the director and creative come from the agency or brand, and we handle organising the shoot."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Reels production for a brand cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cost is calculated per package of videos and depends on the number of shoot days, casting and the amount of editing. We prepare the budget after the brief."
+          }
         }
       ]
     }
@@ -144,6 +200,15 @@
     .u-strip { grid-auto-columns: 216px !important; }
   }
 </style>
+<style>
+    .f-item { border-top:1px solid var(--ink-12) }
+    .f-item:last-child { border-bottom:1px solid var(--ink-12) }
+    .f-item summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; padding:22px 0; font-size:19px; font-weight:600; color:var(--black) }
+    .f-item summary::-webkit-details-marker { display:none }
+    .f-item summary span { font-weight:400; color:var(--red-clay); transition:transform .2s }
+    .f-item[open] summary span { transform:rotate(45deg) }
+    .f-a { padding:0 0 24px; font-size:16px; line-height:1.65; color:var(--ink-62); max-width:68ch }
+  </style>
 </head>
 
 <body>
@@ -330,7 +395,12 @@
   </section>
 
   <!-- ---- CTA ------------------------------------------------------------ -->
+  
   <section style="padding:96px 8px 0">
+    <h2 data-split data-reveal style="font-size:var(--text-display-sm);font-weight:600;margin-bottom:32px">FAQ</h2>
+    <div data-reveal-group><details class="f-item" open><summary>Can I order post-production only?<span aria-hidden="true">+</span></summary><div class="f-a">Yes. Send a description of the footage and the task, and we&#x27;ll estimate the scope and timing.</div></details><details class="f-item"><summary>How is branded content different from a commercial?<span aria-hidden="true">+</span></summary><div class="f-a">A commercial delivers one message in 15–60 seconds and works through impressions. Branded content is a story viewers watch by choice. The brand is present through the theme, the characters or the values, not through a direct call to buy.</div></details><details class="f-item"><summary>Can I hire you for production without your director?<span aria-hidden="true">+</span></summary><div class="f-a">Yes. In the production service format the director and creative come from the agency or brand, and we handle organising the shoot.</div></details><details class="f-item"><summary>How much does Reels production for a brand cost?<span aria-hidden="true">+</span></summary><div class="f-a">The cost is calculated per package of videos and depends on the number of shoot days, casting and the amount of editing. We prepare the budget after the brief.</div></details></div>
+  </section>
+<section style="padding:96px 8px 0">
     <div data-reveal style="border-radius:14px;background:var(--off-black);color:var(--white);padding:56px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
       <div>
         <h2 data-split style="font-size:clamp(28px,3vw,40px);font-weight:600;margin-bottom:12px;max-width:22ch">Didn't find the format you need?</h2>

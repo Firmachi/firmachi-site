@@ -38,7 +38,15 @@
         "https://t.me/superchil",
         "https://www.instagram.com/firmachi.kz/"
       ],
-      "description": "Firmachi — видеопродакшн для ТВ и digital в Казахстане. Рекламные ролики от сценария до финального монтажа: съёмка, продюсирование, пост-продакшн."
+      "description": "Firmachi — видеопродакшн для ТВ и digital в Казахстане. Рекламные ролики от сценария до финального монтажа: съёмка, продюсирование, пост-продакшн.",
+      "founder": {
+        "@id": "https://firmachi.kz/#chingiz"
+      },
+      "knowsLanguage": [
+        "ru",
+        "kk",
+        "en"
+      ]
     },
     {
       "@type": "WebSite",
@@ -79,6 +87,54 @@
           "position": 2,
           "name": "Услуги",
           "item": "https://firmachi.kz/uslugi"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://firmachi.kz/#chingiz",
+      "name": "Chingiz Akbayev",
+      "worksFor": {
+        "@id": "https://firmachi.kz/#org"
+      },
+      "sameAs": [
+        "https://vimeo.com/chimabue"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Можно ли заказать только постпродакшен?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Пришлите описание материала и задачи, мы оценим объём и сроки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем branded content отличается от рекламного ролика?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Рекламный ролик за 15–60 секунд доносит одно сообщение и работает за счёт показов. Branded content — это история, которую зритель смотрит по своему желанию. Бренд в ней присутствует через тему, героев или ценности, а не через прямой призыв к покупке."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли заказать продюсирование без вашего режиссёра?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. В формате продакшен-сервиса режиссёр и креатив со стороны агентства или бренда, а мы отвечаем за организацию съёмки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько стоит производство Reels для бренда?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стоимость считается за пакет роликов и зависит от количества съёмочных дней, кастинга и объёма монтажа. Смету готовим после брифа."
+          }
         }
       ]
     }
@@ -144,6 +200,15 @@
     .u-strip { grid-auto-columns: 216px !important; }
   }
 </style>
+<style>
+    .f-item { border-top:1px solid var(--ink-12) }
+    .f-item:last-child { border-bottom:1px solid var(--ink-12) }
+    .f-item summary { list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:20px; padding:22px 0; font-size:19px; font-weight:600; color:var(--black) }
+    .f-item summary::-webkit-details-marker { display:none }
+    .f-item summary span { font-weight:400; color:var(--red-clay); transition:transform .2s }
+    .f-item[open] summary span { transform:rotate(45deg) }
+    .f-a { padding:0 0 24px; font-size:16px; line-height:1.65; color:var(--ink-62); max-width:68ch }
+  </style>
 </head>
 
 <body>
@@ -330,7 +395,12 @@
   </section>
 
   <!-- ---- CTA ------------------------------------------------------------ -->
+  
   <section style="padding:96px 8px 0">
+    <h2 data-split data-reveal style="font-size:var(--text-display-sm);font-weight:600;margin-bottom:32px">Частые вопросы</h2>
+    <div data-reveal-group><details class="f-item" open><summary>Можно ли заказать только постпродакшен?<span aria-hidden="true">+</span></summary><div class="f-a">Да. Пришлите описание материала и задачи, мы оценим объём и сроки.</div></details><details class="f-item"><summary>Чем branded content отличается от рекламного ролика?<span aria-hidden="true">+</span></summary><div class="f-a">Рекламный ролик за 15–60 секунд доносит одно сообщение и работает за счёт показов. Branded content — это история, которую зритель смотрит по своему желанию. Бренд в ней присутствует через тему, героев или ценности, а не через прямой призыв к покупке.</div></details><details class="f-item"><summary>Можно ли заказать продюсирование без вашего режиссёра?<span aria-hidden="true">+</span></summary><div class="f-a">Да. В формате продакшен-сервиса режиссёр и креатив со стороны агентства или бренда, а мы отвечаем за организацию съёмки.</div></details><details class="f-item"><summary>Сколько стоит производство Reels для бренда?<span aria-hidden="true">+</span></summary><div class="f-a">Стоимость считается за пакет роликов и зависит от количества съёмочных дней, кастинга и объёма монтажа. Смету готовим после брифа.</div></details></div>
+  </section>
+<section style="padding:96px 8px 0">
     <div data-reveal style="border-radius:14px;background:var(--off-black);color:var(--white);padding:56px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap">
       <div>
         <h2 data-split style="font-size:clamp(28px,3vw,40px);font-weight:600;margin-bottom:12px;max-width:22ch">Не нашли нужный формат?</h2>
